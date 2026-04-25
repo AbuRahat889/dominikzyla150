@@ -1,12 +1,194 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
+  <link rel="stylesheet" href="assets/css/topbar.css">
+  <link rel="stylesheet" href="assets/css/overview.css">
 </head>
 <body>
-    <h1>Hello World</h1>
-    <h1>Home page</h1>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Main -->
+  <main class="main">
+    <div id="topbar"></div>
+
+    <div class="content">
+   <div class="content">
+                <h1 class="dashboard-title">Dashboard Overview</h1>
+                <p class="dashboard-subtitle">Monitor your progress, earnings, and team performance in real-time.</p>
+
+                <!-- Earnings Overview -->
+                <section class="earnings-overview">
+                    <h2 class="section-title">Earnings Overview</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon cyan">💰</div>
+                                <div class="card-label">Total Earned</div>
+                            </div>
+                            <div class="card-value">$12,229</div>
+                            <div class="card-change">+12.5%</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon teal">💸</div>
+                                <div class="card-label">Total Withdrawn</div>
+                            </div>
+                            <div class="card-value">$12,229</div>
+                            <div class="card-change">+12.5%</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon emerald">📊</div>
+                                <div class="card-label">Available Balance</div>
+                            </div>
+                            <div class="card-value">$12,229</div>
+                            <div class="card-change">+12.5%</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon" style="background-color: #8b5cf6; color: #0f172a;">🎯</div>
+                                <div class="card-label">Target</div>
+                            </div>
+                            <div class="card-value">8 Sales</div>
+                            <div class="card-change">+12.5%</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Challenge Progress and Metrics -->
+                <section class="challenge-section">
+                    <!-- Challenge Progress -->
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <div class="challenge-label">Challenge Progress</div>
+                            <div class="challenge-title">September 2025 Sales Challenge</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="circular-progress">
+                                <svg viewBox="0 0 160 160">
+                                    <defs>
+                                        <linearGradient id="gradientCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="80" cy="80" r="75" class="progress-circle-bg"></circle>
+                                    <circle cx="80" cy="80" r="75" class="progress-circle" style="stroke-dasharray: 471;"></circle>
+                                </svg>
+                                <div class="progress-text">
+                                    <div class="progress-number">75%</div>
+                                    <div class="progress-label">3 out of 4 sales completed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Partners & Metrics -->
+                    <div class="metrics-card">
+                        <h3 class="section-title" style="margin-bottom: 16px;">Direct Partners</h3>
+                        <div class="metric-item">
+                            <div class="metric-label">
+                                <div class="metric-dot"></div>
+                                <span>Direct Partners</span>
+                            </div>
+                            <div class="metric-value">0/3</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">
+                                <div class="metric-dot"></div>
+                                <span>Teams Volume</span>
+                            </div>
+                            <div class="metric-value">0 VP/1,500 VP</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">
+                                <div class="metric-dot"></div>
+                                <span>Package value</span>
+                            </div>
+                            <div class="metric-value">0 VP/1,500 VP</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section>
+                    <div class="activity-header">
+                        <h2 class="section-title">Recent Activity</h2>
+                        <button class="activity-filter">Last 7 Days</button>
+                    </div>
+                    <div class="challenge-card">
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <div class="activity-icon">📥</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">
+                                        Direct Commission Earned
+                                        <span class="activity-badge">+$123</span>
+                                    </div>
+                                    <div class="activity-description">Commission from package purchase</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon">🤝</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">New Direct Partner</div>
+                                    <div class="activity-description">Commission from package purchase</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon">👤</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Team Member Registration</div>
+                                    <div class="activity-description">Commission from package purchase</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon">📥</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">
+                                        Direct Commission Earned
+                                        <span class="activity-badge">+$123</span>
+                                    </div>
+                                    <div class="activity-description">Commission from package purchase</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon">📥</div>
+                                <div class="activity-content">
+                                    <div class="activity-title">
+                                        Direct Commission Earned
+                                        <span class="activity-badge">+$123</span>
+                                    </div>
+                                    <div class="activity-description">Commission from package purchase</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="see-more">See More</div>
+                    </div>
+                </section>
+            </div>
+    </div>
+  </main>
+
+</div>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>

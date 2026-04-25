@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>side bar</h1>
+    <aside class="sidebar">
+    <div class="sidebar-header">
+        <div class="logo">
+            <div class="logo-icon">✓</div>
+            <span>VOIDARA</span>
+        </div>
+    </div>
+
+    <div class="sidebar-section">
+        <div class="sidebar-section-title">General</div>
+        <ul class="sidebar-menu">
+            <li>
+                <a class="active" onclick="toggleDropdown(event, 'general-menu')">
+                    <div class="menu-label">
+                        <span class="menu-icon">📊</span>
+                        Dashboard
+                    </div>
+                    <div class="dropdown-arrow">▼</div>
+                </a>
+                <ul class="submenu open" id="general-menu">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Analytics</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</aside>
 </body>
 </html>
