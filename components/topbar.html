@@ -1,35 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="topbar">
-    <div class="topbar-left">
+      <div class="topbar-left">
         <span class="welcome-text">Welcome Back! 👋</span>
-    </div>
+      </div>
 
-    <div class="topbar-right">
+      <div class="topbar-right">
         <div class="language-selector">
-            <span>🌐</span>
-            <span>EN</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+              stroke="#B5BDC9"
+              stroke-width="1.5"
+            />
+            <path
+              d="M2 12.9506C8.14512 13.5607 13.5577 8.11477 12.9506 2"
+              stroke="#B5BDC9"
+              stroke-width="1.5"
+            />
+            <path
+              d="M11.0507 22.0012C10.4406 15.856 15.8866 10.4434 22.0013 11.0505"
+              stroke="#B5BDC9"
+              stroke-width="1.5"
+            />
+            <path
+              d="M17 20C17 12.8203 11.1797 7 4 7"
+              stroke="#B5BDC9"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p>EN</p>
         </div>
 
         <div class="user-menu">
-            <div class="user-menu-toggle" onclick="toggleUserMenu()">
-                <div class="user-avatar">AK</div>
-                <span>Alesia K.</span>
-            </div>
+          <div class="user-menu-toggle" onclick="toggleUserMenu()">
+            <div class="user-avatar">AK</div>
+            <span>Alesia K.</span>
+          </div>
 
-            <div class="user-dropdown" id="userDropdown">
-                <div class="user-dropdown-header">Alesia Karapova</div>
-                <div class="user-dropdown-item">Profile</div>
-                <div class="user-dropdown-item">Logout</div>
+          <div class="user-dropdown" id="userDropdown">
+            <div class="user-dropdown-header">Alesia Karapova</div>
+            <div class="user-dropdown-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M18.5 20V17.9704C18.5 16.7281 17.9407 15.5099 16.8103 14.9946C15.4315 14.3661 13.7779 14 12 14C10.2221 14 8.5685 14.3661 7.18968 14.9946C6.05927 15.5099 5.5 16.7281 5.5 17.9704V20"
+                  stroke="#B5BDC9"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 11C13.933 11 15.5 9.433 15.5 7.5C15.5 5.567 13.933 4 12 4C10.067 4 8.5 5.567 8.5 7.5C8.5 9.433 10.067 11 12 11Z"
+                  stroke="#B5BDC9"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Profile
             </div>
+            <div class="user-dropdown-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M8.33333 6.66666V4.99999C8.33333 4.55797 8.50893 4.13404 8.82149 3.82148C9.13405 3.50892 9.55797 3.33333 10 3.33333H15.8333C16.2754 3.33333 16.6993 3.50892 17.0118 3.82148C17.3244 4.13404 17.5 4.55797 17.5 4.99999V15C17.5 15.442 17.3244 15.8659 17.0118 16.1785C16.6993 16.4911 16.2754 16.6667 15.8333 16.6667H10C9.55797 16.6667 9.13405 16.4911 8.82149 16.1785C8.50893 15.8659 8.33333 15.442 8.33333 15V13.3333"
+                  stroke="#A0AEC0"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.1667 10H2.50008M2.50008 10L5.00008 7.5M2.50008 10L5.00008 12.5"
+                  stroke="#A0AEC0"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Logout
+            </div>
+          </div>
         </div>
-    </div>
-</nav>
-</body>
+      </div>
+    </nav>
+  </body>
 </html>
