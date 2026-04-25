@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/sidebar.css" />
@@ -19,8 +27,8 @@
         <div id="topbar"></div>
 
         <div class="content">
-          <h1 class="dashboard-title">Dashboard Overview</h1>
-          <p class="dashboard-subtitle">
+          <h1 class="page-title">Dashboard Overview</h1>
+          <p class="page-subtitle">
             Monitor your progress, earnings, and team performance in real-time.
           </p>
 
@@ -30,40 +38,96 @@
             <div class="cards-grid">
               <div class="card">
                 <div class="card-header">
-                  <div class="card-icon cyan">💰</div>
+                  <div class="card-icon cyan">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-dollar-sign-icon lucide-dollar-sign"
+                    >
+                      <line x1="12" x2="12" y1="2" y2="22" />
+                      <path
+                        d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                      />
+                    </svg>
+                  </div>
                   <div class="card-label">Total Earned</div>
                 </div>
-                <div class="card-value">$12,229</div>
-                <div class="card-change">+12.5%</div>
+                <div class="card-value-section">
+                  <div class="card-value">$12,229</div>
+                  <div class="card-change">+12.5%</div>
+                </div>
               </div>
               <div class="card">
                 <div class="card-header">
-                  <div class="card-icon teal">💸</div>
+                  <div class="card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-move-down-icon lucide-move-down"
+                    >
+                      <path d="M8 18L12 22L16 18" />
+                      <path d="M12 2V22" />
+                    </svg>
+                  </div>
                   <div class="card-label">Total Withdrawn</div>
                 </div>
-                <div class="card-value">$12,229</div>
-                <div class="card-change">+12.5%</div>
+                <div class="card-value-section">
+                  <div class="card-value">$12,229</div>
+                  <div class="card-change">+12.5%</div>
+                </div>
               </div>
               <div class="card">
                 <div class="card-header">
-                  <div class="card-icon emerald">📊</div>
+                  <div class="card-icon emerald">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                  </div>
                   <div class="card-label">Available Balance</div>
                 </div>
-                <div class="card-value">$12,229</div>
-                <div class="card-change">+12.5%</div>
+                <div class="card-value-section">
+                  <div class="card-value">$12,229</div>
+                  <div class="card-change">+12.5%</div>
+                </div>
               </div>
               <div class="card">
                 <div class="card-header">
-                  <div
-                    class="card-icon"
-                    style="background-color: #8b5cf6; color: #0f172a"
-                  >
-                    🎯
+                  <div class="card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-goal-icon lucide-goal"
+                    >
+                      <path d="M12 13V2l8 4-8 4" />
+                      <path d="M20.561 10.222a9 9 0 1 1-12.55-5.29" />
+                      <path d="M8.002 9.997a5 5 0 1 0 8.9 2.02" />
+                    </svg>
                   </div>
                   <div class="card-label">Target</div>
                 </div>
-                <div class="card-value">8 Sales</div>
-                <div class="card-change">+12.5%</div>
+                <div class="card-value-section">
+                  <div class="card-value">$12,229</div>
+                  <div class="card-change">+12.5%</div>
+                </div>
               </div>
             </div>
           </section>
@@ -73,9 +137,31 @@
             <!-- Challenge Progress -->
             <div class="challenge-card">
               <div class="challenge-header">
-                <div class="challenge-label">Challenge Progress</div>
-                <div class="challenge-title">
-                  September 2025 Sales Challenge
+                <div>
+                  <div class="card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-goal-icon lucide-goal"
+                    >
+                      <path d="M12 13V2l8 4-8 4" />
+                      <path d="M20.561 10.222a9 9 0 1 1-12.55-5.29" />
+                      <path d="M8.002 9.997a5 5 0 1 0 8.9 2.02" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <div class="challenge-label">Challenge Progress</div>
+                  <div class="challenge-title">
+                    September 2025 Sales Challenge
+                  </div>
                 </div>
               </div>
               <div class="progress-container">
@@ -114,8 +200,9 @@
                     ></circle>
                   </svg>
                   <div class="progress-text">
-                    <div class="progress-number">75%</div>
-                    <div class="progress-label">3 out of 4 sales completed</div>
+                    <div class="progress-number">3</div>
+                    <div class="progress-label"><div>out of 4 sales completed</div></div>
+                    <div class="progress-percentage">75%</div>
                   </div>
                 </div>
               </div>
@@ -226,5 +313,10 @@
     </div>
 
     <script src="assets/js/app.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
   </body>
 </html>
