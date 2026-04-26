@@ -53,7 +53,14 @@
 
           <div class="user-dropdown" id="userDropdown">
             <div class="user-dropdown-header">Alesia Karapova</div>
-            <div class="user-dropdown-item">
+            <div
+              data-page="profile"
+              onclick="
+                loadPage('profile');
+                setActive('profile');
+              "
+              class="user-dropdown-item active"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -78,6 +85,7 @@
               </svg>
               Profile
             </div>
+
             <div class="user-dropdown-item">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

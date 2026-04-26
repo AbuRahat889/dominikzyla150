@@ -46,7 +46,7 @@ function loadPage(page) {
 
 // default page load
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("webinars");
+  loadPage("profile");
 });
 
 //////////////////////////////
@@ -95,3 +95,8 @@ window.loadPage = loadPage;
 window.setActive = setActive;
 window.toggleDropdown = toggleDropdown;
 window.toggleUserMenu = toggleUserMenu;
+
+//////////////////////////////
+// profile page tabs
+//////////////////////////////
+
