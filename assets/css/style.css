@@ -110,16 +110,16 @@ body {
   flex-direction: column;
 }
 
-.active {
-    background-color: #1EFFC7;
-    height: 14px;
-    width: 14px;
-    border-radius: 99px;
+.active-progress {
+  background-color: #1effc7;
+  height: 14px;
+  width: 14px;
+  border-radius: 99px;
 }
 
 .inactive {
-    background-color: #676B6E;
-    height: 14px;
-    width: 14px;
-    border-radius: 99px;
+  background-color: #676b6e;
+  height: 14px;
+  width: 14px;
+  border-radius: 99px;
 }
