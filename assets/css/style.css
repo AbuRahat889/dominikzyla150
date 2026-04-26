@@ -14,7 +14,7 @@ body {
     "Helvetica Neue",
     Arial,
     sans-serif;
-  background-color: #0f172a;
+  background-color: #020817;
   color: #b5bdc9;
   /* overflow-x: hidden; */
 }
@@ -27,7 +27,6 @@ body {
 .content {
   flex: 1;
   overflow-y: auto;
-  background-color: #0f172a;
   padding: 24px;
 }
 

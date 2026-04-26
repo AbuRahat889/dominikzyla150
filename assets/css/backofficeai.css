@@ -40,7 +40,7 @@
   text-align: center;
   padding: 60px 20px;
   background: #060d21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 0.6px solid #1effc74d;
   border-radius: 12px;
   margin-bottom: 60px;
 }
@@ -130,10 +130,10 @@
   line-height: 1.5;
 }
 .chat-features-list {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .chat-features {
   margin: 20px 0;
@@ -161,7 +161,6 @@ width: 100%;
 
 .start-btn {
   width: 100%;
-
 }
 
 .start-btn:hover {
@@ -182,5 +181,6 @@ width: 100%;
 
   .empty-state {
     padding: 40px 20px;
+    border: 0.6px solid #1effc74d;
   }
 }

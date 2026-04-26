@@ -1,0 +1,46 @@
+/*  */
+
+.webinars-section {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.left-grid {
+  grid-column: span 4;
+}
+
+.right-grid {
+  grid-column: span 2;
+}
+
+.upcomming-webinars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.schedule-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.quick-stats-card {
+  margin-bottom: 16px;
+}
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 8px; */ 
+}
+
+.recent-sessions {
+  text-align: center;
+  padding: 20px 20px;
+  background: #060d21;
+  border: 0.6px solid #1effc74d;
+  border-radius: 12px;
+  /* margin-bottom: 60px; */
+}

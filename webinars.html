@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/webinars.css" />
+    <link rel="stylesheet" href="assets/css/backofficeai.css" />
+  </head>
+  <body class="page-body">
+    <div class="">
+      <h1 class="page-title">Webinar Management</h1>
+      <p class="page-subtitle">Schedule and manage webinar sessions</p>
+      <!-- Statistic card section -->
+      <section class="earnings-overview">
+        <div class="cards-grid">
+          <!-- card 1 -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon cyan">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M12 8V12L14 14"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="card-label">Upcoming Sessions</div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">0 Seconds</div>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M11 8H13"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="card-label">Today’s Sessions</div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">0 Seconds</div>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon emerald">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M12 8V12L14 14"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="card-label">Starting Soon</div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">0 Seconds</div>
+            </div>
+          </div>
+          <!-- card 4 -->
+        </div>
+      </section>
+
+      <section class="webinars-section">
+        <!-- Empty State -->
+        <div class="card left-grid">
+          <div class="upcomming-webinars">
+            <p class="page-title">Upcoming Webinars</p>
+            <button class="activity-filter">Last 7 Days</button>
+          </div>
+          <div class="empty-state" style="border: none">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+              >
+                <path
+                  d="M22 16H26"
+                  stroke="#F3F8FF"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M4 22C4 15.4003 4 12.1005 6.05026 10.0503C8.1005 8 11.4003 8 18 8H20C26.5996 8 29.8994 8 31.9498 10.0503C34 12.1005 34 15.4003 34 22V26C34 32.5996 34 35.8994 31.9498 37.9498C29.8994 40 26.5996 40 20 40H18C11.4003 40 8.1005 40 6.05026 37.9498C4 35.8994 4 32.5996 4 26V22Z"
+                  stroke="#F3F8FF"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M34 17.8117L34.2518 17.6039C38.4834 14.1125 40.5992 12.3667 42.2996 13.2096C44 14.0526 44 16.8471 44 22.4362V25.5638C44 31.153 44 33.9474 42.2996 34.7904C40.5992 35.6332 38.4834 33.8876 34.2518 30.396L34 30.1882"
+                  stroke="#F3F8FF"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h2 class="page-title">No upcoming webinars</h2>
+            <p class="empty-state-text">Check back later for new sessions</p>
+            <button class="btn">
+              <div class="schedule-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M8.00098 3.33325V12.6679"
+                    stroke="#020817"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.6677 8.00122H3.33301"
+                    stroke="#020817"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Schedule Webinar
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="right-grid">
+          <div class="card quick-stats-card">
+            <div class="upcomming-webinars">
+              <p class="page-title">Quick Stats</p>
+            </div>
+            <p class="stat-item page-subtitle">
+              Upcoming Sessions
+              <span>0</span>
+            </p>
+            <p class="stat-item page-subtitle">
+              Today’s Sessions
+              <span>0</span>
+            </p>
+            <p class="stat-item page-subtitle">
+              Starting Soon
+              <span>0</span>
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="upcomming-webinars">
+              <p class="page-title">Recent Sessions</p>
+            </div>
+            <div class="recent-sessions" style="border: none">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                >
+                  <path
+                    d="M22 16H26"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M4 22C4 15.4003 4 12.1005 6.05026 10.0503C8.1005 8 11.4003 8 18 8H20C26.5996 8 29.8994 8 31.9498 10.0503C34 12.1005 34 15.4003 34 22V26C34 32.5996 34 35.8994 31.9498 37.9498C29.8994 40 26.5996 40 20 40H18C11.4003 40 8.1005 40 6.05026 37.9498C4 35.8994 4 32.5996 4 26V22Z"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M34 17.8117L34.2518 17.6039C38.4834 14.1125 40.5992 12.3667 42.2996 13.2096C44 14.0526 44 16.8471 44 22.4362V25.5638C44 31.153 44 33.9474 42.2996 34.7904C40.5992 35.6332 38.4834 33.8876 34.2518 30.396L34 30.1882"
+                    stroke="#F3F8FF"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <!-- <h2 class="page-title">No recent sessions</h2> -->
+              <p class="empty-state-text">No recent sessions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
