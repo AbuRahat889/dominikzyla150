@@ -46,7 +46,7 @@ function loadPage(page) {
 
 // default page load
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("profile");
+  loadPage("dashboard");
 });
 
 //////////////////////////////
@@ -99,4 +99,3 @@ window.toggleUserMenu = toggleUserMenu;
 //////////////////////////////
 // profile page tabs
 //////////////////////////////
-
