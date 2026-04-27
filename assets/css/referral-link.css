@@ -33,3 +33,106 @@
 .assets-card-section {
   margin-top: 24px;
 }
+
+.agent-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.agent-card {
+  width: 100%;
+  max-width: 479px;
+  background: #060d21;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  cursor: pointer;
+}
+
+.card-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+.card-content {
+  padding: 20px 0px 24px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #b5bdc9;
+  margin-bottom: 11px;
+  line-height: 1.3;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #8b92a9;
+  margin-bottom: 24px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.button {
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.button-primary {
+  background: linear-gradient(
+    139deg,
+    rgba(30, 255, 199, 0.9) 20.72%,
+    #41a5e9 97.21%
+  );
+
+  color: #0f1729;
+}
+
+.see-more-button {
+  display: flex;
+  margin-top: 32px;
+  width: 137px;
+  height: 48px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  border-bottom: 1px solid var(--Brand-Color-Primary, #1effc7);
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  scale: calc(1.03);
+}
+
+.button-secondary {
+  background: transparent;
+  color: #1dd1a1;
+  border: 2px solid #1dd1a1;
+}
+
+.button-secondary:hover {
+  scale: calc(1.03);
+}
