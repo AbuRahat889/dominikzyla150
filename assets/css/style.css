@@ -115,6 +115,11 @@ body {
   font-size: 16px;
   font-weight: 700;
 }
+.card-card-description {
+  font-size: 10px;
+  font-weight: 400;
+  color: #b5bdc9;
+}
 
 .card-change {
   font-size: 12px;
