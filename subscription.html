@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment & Subscription Management</title>
+    <link rel="stylesheet" href="assets/css/subscription.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="">
+      <!-- Main Page Content -->
+      <div id="mainPage" class="main-page">
+        <!-- Header -->
+        <div class="page-header">
+          <h1 class="page-title">Package Purchase & Upgrades</h1>
+          <p class="page-subtitle">
+            Manage your subscription and upgrade options
+          </p>
+        </div>
+
+        <!-- Steps -->
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon cyan">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+              <div class="card-label">Email Verified</div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">Verified</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-package-icon lucide-package"
+                >
+                  <path
+                    d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"
+                  />
+                  <path d="M12 22V12" />
+                  <polyline points="3.29 7 12 12 20.71 7" />
+                  <path d="m7.5 4.27 9 5.15" />
+                </svg>
+              </div>
+              <div class="card-label">Total Withdrawn</div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">Business</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon emerald">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <div class="card-label">Available Balance</div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">2</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fa-solid fa-circle-info"></i>
+              </div>
+              <div class="card-label">Target</div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">3</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rules Section -->
+        <div class="rules-section">
+          <div class="rules-header" onclick="toggleRules()">
+            <div class="card-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+              <div class="rules-title">Important Rules</div>
+              <div class="rules-subtitle">
+                Review package terms and upgrade requirements
+              </div>
+            </div>
+          </div>
+          <ul class="rules-list" id="rulesList">
+            <li>
+              Packages Upgrades take effect effect immediately upon payment
+              confirmation
+            </li>
+            <li>
+              Downgrades are processed at the end of the current billing cycle
+            </li>
+            <li>
+              Binary volume requirements must be maintained for package benefits
+            </li>
+            <li>
+              Refunds are available within 14 days of purchase (terms apply)
+            </li>
+          </ul>
+        </div>
+
+        <!-- Packages -->
+        <div class="packages-section">
+          <div class="section-header">
+            <h2 class="section-title">Available Packages</h2>
+            <p class="section-subtitle">
+              Choose the perfect plan to accelerate your success
+            </p>
+          </div>
+          <div class="packages-grid">
+            <!-- Starter Package -->
+            <div class="package-card">
+              <div class="package-header">
+                <h3 class="package-name">Starter</h3>
+                <p class="package-desc">Perfect for beginners</p>
+                <div class="package-pricing-info">
+                  <div class="package-price">$99</div>
+                  <p class="package-period">one-time</p>
+                </div>
+              </div>
+              <div class="package-features">
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Binary Volume: $500</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Monthly Fee: $19</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Max Team Size: 5</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Email Support</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Mobile App Access</span>
+                </div>
+              </div>
+              <button
+                class="package-button btn-current"
+                onclick="alert('You are currently on this plan')"
+              >
+                Current Plan
+              </button>
+            </div>
+
+            <!-- Business Package -->
+            <div class="package-card featured">
+              <div class="package-header">
+                <h3 class="package-name">Business</h3>
+                <p class="package-desc">Most popular choice</p>
+                <div class="package-pricing-info">
+                  <div class="package-price">$299</div>
+                  <p class="package-period">one-time</p>
+                </div>
+              </div>
+              <div class="package-features">
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Binary Volume: $1,500</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Monthly Fee: $39</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Max Team Size: 15</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Priority Support</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Advanced Analytics</span>
+                </div>
+              </div>
+              <button
+                class="package-button btn-upgrade"
+                onclick="openModal('purchaseConfirmation', 'Business', '$299')"
+              >
+                Upgrade Now
+              </button>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="package-card">
+              <div class="package-header">
+                <h3 class="package-name">Premium</h3>
+                <p class="package-desc">For power users</p>
+                <div class="package-pricing-info">
+                  <div class="package-price">$599</div>
+                  <p class="package-period">one-time</p>
+                </div>
+              </div>
+              <div class="package-features">
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Binary Volume: $3,000</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Monthly Fee: $79</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Unlimited Team</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>VIP Support</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-check">✓</span>
+                  <span>Custom Integrations</span>
+                </div>
+              </div>
+              <button
+                class="package-button btn-upgrade"
+                onclick="openModal('purchaseConfirmation', 'Premium', '$599')"
+              >
+                Upgrade Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <div class="table-section">
+          <div class="section-header">
+            <h2 class="section-title">Recent Orders</h2>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Package</th>
+                  <th>Price</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ORD-2025-001</td>
+                  <td>Business</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-002</td>
+                  <td>Starter</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-003</td>
+                  <td>Starter</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-004</td>
+                  <td>Premium</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td>
+                    <span class="status status-cancelled">Cancelled</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-005</td>
+                  <td>Premium</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-006</td>
+                  <td>Business</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-007</td>
+                  <td>Starter</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Billing History -->
+        <div class="table-section">
+          <div class="section-header">
+            <h2 class="section-title">Billing History</h2>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ORD-2025-001</td>
+                  <td>Business Package - Monthly Fee</td>
+                  <td>$39.00</td>
+                  <td>Jan 15, 2025</td>
+                  <td><span class="status status-paid">Paid</span></td>
+                  <td style="color: #06b6d4; cursor: pointer">Download</td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-002</td>
+                  <td>Starter</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td><span class="status status-paid">Paid</span></td>
+                  <td style="color: #06b6d4; cursor: pointer">Download</td>
+                </tr>
+                <tr>
+                  <td>ORD-2025-003</td>
+                  <td>Starter</td>
+                  <td>$99</td>
+                  <td>Jan 15, 2025</td>
+                  <td><span class="status status-paid">Paid</span></td>
+                  <td style="color: #06b6d4; cursor: pointer">Download</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MODALS ===== -->
+
+    <!-- 1. Purchase Confirmation Modal -->
+    <div class="modal-overlay" id="purchaseConfirmationModal">
+      <div class="modal">
+        <button
+          class="modal-close"
+          onclick="closeModal('purchaseConfirmation')"
+        >
+          ✕
+        </button>
+        <div class="modal-header">
+          <div class="modal-icon">🛒</div>
+          <h2 class="modal-title">Purchase Confirmation</h2>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 25px">
+          <span class="package-badge" id="confirmPackageName"
+            >Starter Package</span
+          >
+        </div>
+
+        <div class="confirmation-box">
+          <div class="confirmation-row">
+            <span class="confirmation-label">Package Price:</span>
+            <span class="confirmation-value" id="confirmPackagePrice"
+              >500.00 EUR</span
+            >
+          </div>
+          <div class="confirmation-row">
+            <span class="confirmation-label">Binary Volume:</span>
+            <span class="confirmation-value">500.00 VP</span>
+          </div>
+          <div class="confirmation-row total-row">
+            <span>Total:</span>
+            <span id="confirmTotal">500.00 EUR</span>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <strong style="color: #06b6d4">ℹ</strong> After the first month, a
+          monthly subscription of 99.00 EUR will be automatically set up.
+        </div>
+
+        <div class="modal-buttons column">
+          <button class="btn btn-primary" onclick="openModal('paymentMethod')">
+            Choose Payment Method
+          </button>
+          <button
+            class="btn btn-secondary white"
+            onclick="closeModal('purchaseConfirmation')"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Select Payment Method Modal -->
+    <div class="modal-overlay" id="paymentMethodModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('paymentMethod')">
+          ✕
+        </button>
+        <div class="modal-header">
+          <h2 class="modal-title">Select Payment Method</h2>
+          <p style="color: #a0aec0; font-size: 14px; margin-top: 8px">
+            Choose your preferred payment option to continue
+          </p>
+        </div>
+
+        <div class="method-list">
+          <!-- Credit Card Method -->
+          <div
+            class="method-option selected"
+            onclick="selectPaymentMethod(this, 'creditCard')"
+          >
+            <div class="method-radio">
+              <div class="method-radio-inner"></div>
+            </div>
+            <div class="method-content">
+              <div class="method-header">
+                <span class="method-name">💳 Credit Card / Bank Transfer</span>
+                <span class="method-badge">INSTANT</span>
+              </div>
+              <p class="method-desc">
+                Secure payment processing via Stripe. Supports all major credit
+                cards, debit cards, and bank transfers with industry-standard
+                encryption.
+              </p>
+              <div class="method-details">
+                <div class="method-detail">
+                  <span class="detail-icon">⚡</span>
+                  <span>Instant processing</span>
+                </div>
+                <div class="method-detail">
+                  <span class="detail-icon">💰</span>
+                  <span>2.9% + $0.30 fee</span>
+                </div>
+              </div>
+              <div class="method-supports">
+                <span style="font-size: 12px; color: #a0aec0">Supports:</span>
+                <span class="support-badge support-visa">VISA</span>
+                <span class="support-badge support-mastercard">MC</span>
+                <span class="support-badge support-amex">AMEX</span>
+                <span class="support-badge support-discover">DISC</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cryptocurrency Method -->
+          <div
+            class="method-option"
+            onclick="selectPaymentMethod(this, 'crypto')"
+          >
+            <div class="method-radio">
+              <div class="method-radio-inner"></div>
+            </div>
+            <div class="method-content">
+              <div class="method-header">
+                <span class="method-name">₿ Cryptocurrency Payment</span>
+                <span class="method-badge recommended">LOW FEES</span>
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  top: 15px;
+                  right: 15px;
+                  padding: 6px 12px;
+                  background: rgba(16, 185, 129, 0.2);
+                  border-radius: 12px;
+                  font-size: 11px;
+                  color: #10b981;
+                  font-weight: 600;
+                "
+              >
+                ★ RECOMMENDED
+              </div>
+              <p class="method-desc">
+                Pay with Bitcoin, Ethereum, USDT, or other supported
+                cryptocurrencies. Enjoy lower fees and decentralized
+                transactions with blockchain security.
+              </p>
+              <div class="method-details">
+                <div class="method-detail">
+                  <span class="detail-icon">⏱</span>
+                  <span>5-30 minutes</span>
+                </div>
+                <div class="method-detail">
+                  <span class="detail-icon">📡</span>
+                  <span>Network fees only</span>
+                </div>
+              </div>
+              <div class="method-supports">
+                <span style="font-size: 12px; color: #a0aec0">Supports:</span>
+                <span
+                  class="support-badge"
+                  style="background: #f7931a; color: white"
+                  >BTC</span
+                >
+                <span
+                  class="support-badge"
+                  style="background: #627eea; color: white"
+                  >ETH</span
+                >
+                <span
+                  class="support-badge"
+                  style="background: #26a17b; color: white"
+                  >USDT</span
+                >
+                <span
+                  class="support-badge"
+                  style="background: #9945ff; color: white"
+                  >SOL</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Section -->
+        <div class="security-section">
+          <div class="security-title">🔒 Security & Trust</div>
+          <div class="security-items">
+            <div class="security-item">
+              <div class="security-icon">🔐</div>
+              <div class="security-label">256-bit SSL Encryption</div>
+            </div>
+            <div class="security-item">
+              <div class="security-icon">✓</div>
+              <div class="security-label">PCI DSS Compliant</div>
+            </div>
+            <div class="security-item">
+              <div class="security-icon">🛡️</div>
+              <div class="security-label">Two-Factor Auth</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button
+            class="btn btn-back"
+            onclick="openModal('purchaseConfirmation')"
+          >
+            ← Back
+          </button>
+          <button
+            class="btn btn-secondary"
+            onclick="closeModal('paymentMethod')"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-primary" onclick="proceedWithPayment()">
+            Continue with Selected
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Credit Card Payment Modal -->
+    <div class="modal-overlay" id="creditCardPaymentModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('creditCardPayment')">
+          ✕
+        </button>
+        <div class="modal-header">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                width: 40px;
+                height: 40px;
+                background: #5b66e8;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+              "
+            >
+              💳
+            </div>
+            <h2 class="modal-title">Credit Card Payment</h2>
+          </div>
+        </div>
+
+        <div class="amount-box">
+          <div class="amount-label">Amount to pay</div>
+          <div class="amount-value" id="ccAmount">€3,000.00</div>
+        </div>
+
+        <div class="payment-description">Complete your payment securely</div>
+
+        <button
+          class="payment-button"
+          onclick="alert('Redirecting to Stripe payment page...')"
+        >
+          📤 Click Here to Open Payment Page
+        </button>
+
+        <div class="next-steps">
+          <div class="next-steps-title">📋 Next Steps</div>
+          <div class="next-steps-list">
+            <div class="next-step-item">
+              <span class="step-dot"></span>
+              <span>Complete payment on Stripe checkout page</span>
+            </div>
+            <div class="next-step-item">
+              <span class="step-dot"></span>
+              <span>Return after successful payment</span>
+            </div>
+            <div class="next-step-item">
+              <span class="step-dot"></span>
+              <span>Package activates automatically</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button class="btn btn-back" onclick="openModal('paymentMethod')">
+            ← Back
+          </button>
+          <button
+            class="btn btn-cancel"
+            onclick="closeModal('creditCardPayment')"
+          >
+            ✕ Cancel
+          </button>
+          <button
+            class="btn btn-primary"
+            onclick="alert('Redirecting to Stripe...')"
+          >
+            Continue with Crypto
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Crypto Payment Modal -->
+    <div class="modal-overlay" id="cryptoPaymentModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('cryptoPayment')">
+          ✕
+        </button>
+        <div class="modal-header">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                width: 40px;
+                height: 40px;
+                background: #f7931a;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+              "
+            >
+              ₿
+            </div>
+            <h2 class="modal-title">Cryptocurrency Payment</h2>
+          </div>
+        </div>
+
+        <div class="amount-box">
+          <div class="amount-label">Amount to pay</div>
+          <div class="amount-value">0.075 BTC</div>
+        </div>
+
+        <div class="payment-description">
+          Send crypto to the wallet address below
+        </div>
+
+        <div
+          style="
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+          "
+        >
+          <div style="font-size: 12px; color: #a0aec0; margin-bottom: 10px">
+            WALLET ADDRESS
+          </div>
+          <div
+            style="
+              word-break: break-all;
+              font-family: monospace;
+              font-size: 13px;
+              color: #cbd5e1;
+              background: rgba(15, 23, 42, 0.5);
+              padding: 12px;
+              border-radius: 6px;
+              margin-bottom: 12px;
+            "
+          >
+            1A1z7agoat2LWRLWCGHNR11agGFMwqKc7
+          </div>
+          <button
+            style="
+              width: 100%;
+              padding: 8px;
+              background: rgba(6, 182, 212, 0.2);
+              border: 1px solid #06b6d4;
+              color: #06b6d4;
+              border-radius: 6px;
+              cursor: pointer;
+              font-size: 13px;
+              font-weight: 600;
+            "
+          >
+            📋 Copy Address
+          </button>
+        </div>
+
+        <div class="next-steps">
+          <div class="next-steps-title">📋 Next Steps</div>
+          <div class="next-steps-list">
+            <div class="next-step-item">
+              <span class="step-dot"></span>
+              <span>Copy the wallet address above</span>
+            </div>
+            <div class="next-step-item">
+              <span class="step-dot"></span>
+              <span>Send exact amount from your wallet</span>
+            </div>
+            <div class="next-step-item">
+              <span class="step-dot"></span>
+              <span>Wait for blockchain confirmation</span>
+            </div>
+            <div class="next-step-item">
+              <span class="step-dot"></span>
+              <span>Package activates automatically</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button class="btn btn-back" onclick="openModal('paymentMethod')">
+            ← Back
+          </button>
+          <button class="btn btn-cancel" onclick="closeModal('cryptoPayment')">
+            ✕ Cancel
+          </button>
+          <button
+            class="btn btn-primary"
+            onclick="alert('Waiting for payment confirmation...')"
+          >
+            I Sent the Crypto
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Make sure toggleRules works globally
+      window.toggleRules = function () {
+        var rulesList = document.getElementById("rulesList");
+        if (rulesList) {
+          rulesList.classList.toggle("open");
+          console.log(
+            "Rules toggled:",
+            rulesList.classList.contains("open") ? "open" : "closed",
+          );
+        } else {
+          console.error("rulesList element not found!");
+        }
+      };
+    </script>
+    <script src="./assets/js/subscription.js"></script>
+  </body>
+</html>
