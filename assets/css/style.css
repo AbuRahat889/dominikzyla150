@@ -51,6 +51,9 @@ body {
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  /* display: flex;
+  align-items: center;
+  gap: 4px; */
 }
 .btn-outline {
   padding: 10px 24px;
