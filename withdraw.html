@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Withdrawal</title>
+    <link rel="stylesheet" href="./assets/css/withdraw.css" />
+  </head>
+  <body>
+    <div class="withdrawal-container">
+      <!-- Header -->
+      <div class="withdrawal-header">
+        <h1>Withdrawal</h1>
+        <p>Request a withdrawal of your balance</p>
+      </div>
+
+      <!-- Available Balance Card -->
+      <div class="balance-card">
+        <div class="balance-content">
+          <div class="balance-text">
+            <h2>Available Balance</h2>
+            <div class="balance-amount">$24,580.50</div>
+            <p class="balance-updated">Last updated: 2 minutes ago</p>
+          </div>
+        </div>
+        <div class="balance-details">
+          <div class="balance-item">
+            <span class="balance-label">Pending</span>
+            <span class="balance-value">$1,250.00</span>
+          </div>
+          <div class="balance-item">
+            <span class="balance-label">Reserved</span>
+            <span class="balance-value">$500.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Select Withdrawal Method -->
+      <div class="withdrawal-section">
+        <h3>Select Withdrawal Method</h3>
+        <div class="method-options">
+          <label class="method-card">
+            <div class="method-card-desc">
+              <div class="method-icon crypto-icon">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </div>
+
+              <div class="method-info">Cryptocurrency</div>
+              <div class="method-info">USDT (TRC-20 or BSC)</div>
+            </div>
+            <input
+              type="radio"
+              name="withdrawalMethod"
+              value="crypto"
+              checked
+            />
+          </label>
+          <label class="method-card">
+            <div class="method-card-desc">
+              <div class="method-icon bank-icon">🏦</div>
+
+              <div class="method-info">Bank Transfer</div>
+              <div class="method-info">SEPA transfer in EUR</div>
+            </div>
+            <input
+              type="radio"
+              name="withdrawalMethod"
+              value="crypto"
+              checked
+            />
+          </label>
+        </div>
+      </div>
+
+      <!-- Saved Payment Methods -->
+      <div class="withdrawal-section">
+        <h3>Saved Payment Methods</h3>
+        <div class="saved-methods">
+          <div class="card">
+            <div class="card-header">
+              <div class="saved-icon">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div>
+                <div class="card-label">Chase Bank</div>
+                <div class="card-email">sarah.chen@email.com</div>
+              </div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">Business Account</div>
+              <div class="card-actions">
+                <div><i class="fa-solid fa-pen-to-square"></i></div>
+                <div><i class="fa-regular fa-trash-can"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="saved-icon">
+                <i class="fa-brands fa-paypal"></i>
+              </div>
+              <div>
+                <div class="card-label">PayPal</div>
+                <div class="card-email">sarah.chen@email.com</div>
+              </div>
+            </div>
+            <div class="card-value-section">
+              <div class="card-value">Personal Account</div>
+              <div class="card-actions">
+                <div><i class="fa-solid fa-pen-to-square"></i></div>
+                <div><i class="fa-regular fa-trash-can"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="add-method-card">
+            <button class="add-btn">+ Add New Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="withdrawal.js"></script>
+  </body>
+</html>
