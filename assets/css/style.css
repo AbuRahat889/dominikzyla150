@@ -44,11 +44,16 @@ body {
 }
 .btn {
   padding: 10px 24px;
-  background: linear-gradient(to bottom, #5affd6e5, #41a5e9);
+  background: linear-gradient(
+    139deg,
+    rgba(30, 255, 199, 0.9) 20.72%,
+    #41a5e9 97.21%
+  );
   border: none;
   border-radius: 6px;
   color: #060d21;
   font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
   /* display: flex;

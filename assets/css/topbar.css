@@ -92,12 +92,12 @@
   top: 100%;
   right: 0;
   margin-top: 8px;
-  background-color: #020817;
-  border-radius: 8px;
   min-width: 180px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   display: none;
+  border-radius: 12px;
+  background: var(--BG-01, #020817);
+  box-shadow: 0 1px 20px 0 rgba(173, 173, 173, 0.15);
 }
 
 .user-dropdown.show {
