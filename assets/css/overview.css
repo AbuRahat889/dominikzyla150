@@ -7,10 +7,20 @@
 }
 
 .section-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
-  color: #e2e8f0;
+  color: #B5BDC9;
   margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #676B6E;
 }
 
 /* ===== CHALLENGE PROGRESS ===== */
@@ -68,6 +78,56 @@
   gap: 12px;
   justify-content: center;
   align-items: center;
+}
+
+.selected-county {
+  border: #1EFFC74D 0.5px solid;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.qualification-cards-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+
+.qualification-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: #1EFFC74D 0.6px solid;
+  padding: 16px 43px 16px 16px;
+  border: #1EFFC74D 0.8px solid;
+  border-radius: 8px;
+}
+
+.qualification-cards-top {
+  display: flex;
+  gap: 12px;
+}
+
+.qualification-cards-bottom {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+
+}
+
+.qualification-cards-level {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .progress-container {
@@ -205,9 +265,25 @@
   font-weight: 500;
 }
 
+.fa-solid {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ===== RECENT ACTIVITY ===== */
 .activity-header {
   display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.qualification-header {
+  font-size: 20px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
@@ -217,9 +293,9 @@
   background-color: #060d21;
   border: 1px solid #1effc7;
   color: #b5bdc9;
-  padding: 6px 12px;
+  padding: 5.5px 11px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -232,7 +308,6 @@
   display: flex;
   gap: 12px;
   padding: 16px 0;
-  border-bottom: 1px solid #334155;
 }
 
 .activity-item:last-child {
@@ -240,49 +315,52 @@
 }
 
 .activity-icon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background-color: #334155;
+  background-color: #0F131A;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #06b6d4;
+  color: white;
   font-size: 18px;
   flex-shrink: 0;
 }
 
 .activity-content {
-  flex: 1;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .activity-title {
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 600;
-  color: #e2e8f0;
+  color: #B5BDC9;
   margin-bottom: 4px;
 }
 
 .activity-badge {
   display: inline-block;
-  background-color: #06b6d4;
-  color: #0f172a;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  background-color: #1EFFC71A;
+  color: #1EFFC7;
+  padding: 3.5px 10.5px;
+  border: #1EFFC7 0.5px solid;
+  border-radius: 16px;
+  font-size: 14px;
   font-weight: 600;
-  margin-left: 6px;
+  margin-left: 10px;
 }
 
 .activity-description {
-  font-size: 12px;
-  color: #94a3b8;
+  font-size: 18px;
+  color: #676B6E;
   margin-bottom: 4px;
 }
 
 .activity-time {
-  font-size: 11px;
-  color: #64748b;
+  color: #676B6E;
 }
 
 .see-more {
@@ -297,6 +375,98 @@
 
 .see-more:hover {
   color: #0891b2;
+}
+
+.new-registration-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.country-cards-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+
+.country-cards {
+  display: flex;
+  justify-content: space-between;
+  border: #1EFFC74D 0.5px solid;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.country-cards-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.country-cards-text {
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.country-cards-time {
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.country_title {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #B5BDC9;
+}
+
+.country_subtitle {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #676B6E;
+}
+
+.country_days {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #B5BDC9;
+}
+
+.country_date {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #676B6E;
+}
+
+.flag_image {
+  height: 32px;
+  width: 32px;
+}
+
+.flag_image img {
+  height: 25px;
+  width: 100%;
 }
 
 /* ===== RESPONSIVE ===== */
