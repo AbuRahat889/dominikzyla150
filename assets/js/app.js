@@ -46,7 +46,7 @@ function loadPage(page) {
 
 // default page load
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("agent-leads");
+  loadPage("dashboard");
 });
 
 //////////////////////////////
