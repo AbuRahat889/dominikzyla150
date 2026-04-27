@@ -123,6 +123,21 @@ body {
   line-height: 140%;
 }
 
+.bullet-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(
+    --Gradient,
+    linear-gradient(139deg, rgba(30, 255, 199, 0.9) 20.72%, #41a5e9 97.21%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+}
+
 /* ===== MAIN CONTENT ===== */
 .main {
   flex: 1;

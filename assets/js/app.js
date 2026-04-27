@@ -46,7 +46,7 @@ function loadPage(page) {
 
 // default page load
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("support");
+  loadPage("agents");
 });
 
 //////////////////////////////
