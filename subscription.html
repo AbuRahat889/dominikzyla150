@@ -383,16 +383,18 @@
     <!-- ===== MODALS ===== -->
 
     <!-- 1. Purchase Confirmation Modal -->
-    <div class="modal-overlay" id="purchaseConfirmationModal">
-      <div class="modal">
+    <div class="modal" id="purchaseConfirmationModal">
+      <div class="modal-content">
         <button
-          class="modal-close"
+          class="close-btn"
           onclick="closeModal('purchaseConfirmationModal')"
         >
           ✕
         </button>
         <div class="modal-header">
-          <div class="modal-icon">🛒</div>
+          <div class="modal-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
           <h2 class="modal-title">Purchase Confirmation</h2>
         </div>
 
@@ -425,7 +427,13 @@
         </div>
 
         <div class="modal-buttons column">
-          <button class="btn btn-primary" onclick="openModal('paymentMethod')">
+          <button
+            class="btn btn-primary"
+            onclick="
+              closeModal('purchaseConfirmationModal');
+              openModal('paymentMethodModal', event);
+            "
+          >
             Choose Payment Method
           </button>
           <button
@@ -439,14 +447,14 @@
     </div>
 
     <!-- 2. Select Payment Method Modal -->
-    <div class="modal-overlay" id="paymentMethodModal">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModal('paymentMethod')">
+    <div class="modal" id="paymentMethodModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('paymentMethodModal', event)">
           ✕
         </button>
         <div class="modal-header">
           <h2 class="modal-title">Select Payment Method</h2>
-          <p style="color: #a0aec0; font-size: 14px; margin-top: 8px">
+          <p style="color: #a0aec0">
             Choose your preferred payment option to continue
           </p>
         </div>
@@ -457,36 +465,43 @@
             class="method-option selected"
             onclick="selectPaymentMethod(this, 'creditCard')"
           >
+            <div class="method-content">
+              <div class="method-icons">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+              <div>
+                <div class="method-header">
+                  <span class="method-name">Credit Card / Bank Transfer</span>
+                  <span class="method-badge">INSTANT</span>
+                </div>
+                <p class="method-desc">
+                  Secure payment processing via Stripe. Supports all major
+                  credit cards, debit cards, and bank transfers with
+                  industry-standard encryption.
+                </p>
+                <div class="method-details">
+                  <div class="method-detail">
+                    <span class="detail-icon"
+                      ><i class="fa-solid fa-clock"></i
+                    ></span>
+                    <span>Instant processing</span>
+                  </div>
+                  <div class="method-detail">
+                    <span class="detail-icon">%</span>
+                    <span>2.9% + $0.30 fee</span>
+                  </div>
+                </div>
+                <div class="method-supports">
+                  <span style="font-size: 12px; color: #a0aec0">Supports:</span>
+                  <img src="/assets/images/visa.png" />
+                  <img src="/assets/images/mastercard.png" />
+                  <img src="/assets/images/american_express.png" />
+                  <img src="/assets/images/discover.png" />
+                </div>
+              </div>
+            </div>
             <div class="method-radio">
               <div class="method-radio-inner"></div>
-            </div>
-            <div class="method-content">
-              <div class="method-header">
-                <span class="method-name">💳 Credit Card / Bank Transfer</span>
-                <span class="method-badge">INSTANT</span>
-              </div>
-              <p class="method-desc">
-                Secure payment processing via Stripe. Supports all major credit
-                cards, debit cards, and bank transfers with industry-standard
-                encryption.
-              </p>
-              <div class="method-details">
-                <div class="method-detail">
-                  <span class="detail-icon">⚡</span>
-                  <span>Instant processing</span>
-                </div>
-                <div class="method-detail">
-                  <span class="detail-icon">💰</span>
-                  <span>2.9% + $0.30 fee</span>
-                </div>
-              </div>
-              <div class="method-supports">
-                <span style="font-size: 12px; color: #a0aec0">Supports:</span>
-                <span class="support-badge support-visa">VISA</span>
-                <span class="support-badge support-mastercard">MC</span>
-                <span class="support-badge support-amex">AMEX</span>
-                <span class="support-badge support-discover">DISC</span>
-              </div>
             </div>
           </div>
 
@@ -495,67 +510,56 @@
             class="method-option"
             onclick="selectPaymentMethod(this, 'crypto')"
           >
+            <div class="method-content">
+              <div class="method-icons">
+                <i class="fa-brands fa-bitcoin"></i>
+              </div>
+              <div>
+                <div class="method-header">
+                  <span class="method-name">Cryptocurrency Payment</span>
+                  <span class="method-badge recommended">LOW FEES</span>
+                </div>
+                <div
+                  style="
+                    position: absolute;
+                    top: -10px;
+                    left: 15px;
+                    padding: 6px 12px;
+                    background: rgb(16, 185, 129);
+                    border-radius: 12px;
+                    font-size: 11px;
+                    color: white;
+                    font-weight: 600;
+                  "
+                >
+                  ★ RECOMMENDED
+                </div>
+                <p class="method-desc">
+                  Pay with Bitcoin, Ethereum, USDT, or other supported
+                  cryptocurrencies. Enjoy lower fees and decentralized
+                  transactions with blockchain security.
+                </p>
+                <div class="method-details">
+                  <div class="method-detail">
+                    <span class="detail-icon">⏱</span>
+                    <span>5-30 minutes</span>
+                  </div>
+                  <div class="method-detail">
+                    <span class="detail-icon">📡</span>
+                    <span>Network fees only</span>
+                  </div>
+                </div>
+                <div class="method-supports">
+                  <span style="font-size: 12px; color: #a0aec0">Supports:</span>
+                  <img src="/assets/images/crypto_1.png" />
+                  <img src="/assets/images/crypto_2.png" />
+                  <img src="/assets/images/crypto_3.png" />
+                  <img src="/assets/images/crypto_4.png" />
+                </div>
+              </div>
+            </div>
             <div class="method-radio">
               <div class="method-radio-inner"></div>
-            </div>
-            <div class="method-content">
-              <div class="method-header">
-                <span class="method-name">₿ Cryptocurrency Payment</span>
-                <span class="method-badge recommended">LOW FEES</span>
-              </div>
-              <div
-                style="
-                  position: absolute;
-                  top: 15px;
-                  right: 15px;
-                  padding: 6px 12px;
-                  background: rgba(16, 185, 129, 0.2);
-                  border-radius: 12px;
-                  font-size: 11px;
-                  color: #10b981;
-                  font-weight: 600;
-                "
-              >
-                ★ RECOMMENDED
-              </div>
-              <p class="method-desc">
-                Pay with Bitcoin, Ethereum, USDT, or other supported
-                cryptocurrencies. Enjoy lower fees and decentralized
-                transactions with blockchain security.
-              </p>
-              <div class="method-details">
-                <div class="method-detail">
-                  <span class="detail-icon">⏱</span>
-                  <span>5-30 minutes</span>
-                </div>
-                <div class="method-detail">
-                  <span class="detail-icon">📡</span>
-                  <span>Network fees only</span>
-                </div>
-              </div>
-              <div class="method-supports">
-                <span style="font-size: 12px; color: #a0aec0">Supports:</span>
-                <span
-                  class="support-badge"
-                  style="background: #f7931a; color: white"
-                  >BTC</span
-                >
-                <span
-                  class="support-badge"
-                  style="background: #627eea; color: white"
-                  >ETH</span
-                >
-                <span
-                  class="support-badge"
-                  style="background: #26a17b; color: white"
-                  >USDT</span
-                >
-                <span
-                  class="support-badge"
-                  style="background: #9945ff; color: white"
-                  >SOL</span
-                >
-              </div>
             </div>
           </div>
         </div>
@@ -582,7 +586,7 @@
         <div class="modal-buttons">
           <button
             class="btn btn-back"
-            onclick="openModal('purchaseConfirmationModal')"
+            onclick="openModal('purchaseConfirmationModal', event)"
           >
             ← Back
           </button>
@@ -592,7 +596,13 @@
           >
             Cancel
           </button>
-          <button class="btn btn-primary" onclick="proceedWithPayment()">
+          <button
+            class="btn btn-primary"
+            onclick="
+              closeModal('paymentMethodModal');
+              openModal('creditCardPaymentModal', event);
+            "
+          >
             Continue with Selected
           </button>
         </div>
@@ -600,9 +610,9 @@
     </div>
 
     <!-- 3. Credit Card Payment Modal -->
-    <div class="modal-overlay" id="creditCardPaymentModal">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModal('creditCardPayment')">
+    <div class="modal" id="creditCardPaymentModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('creditCardPayment')">
           ✕
         </button>
         <div class="modal-header">
@@ -670,7 +680,7 @@
           </button>
           <button
             class="btn btn-cancel"
-            onclick="closeModal('creditCardPayment')"
+            onclick="closeModal('creditCardPaymentModal')"
           >
             ✕ Cancel
           </button>
@@ -685,9 +695,9 @@
     </div>
 
     <!-- 4. Crypto Payment Modal -->
-    <div class="modal-overlay" id="cryptoPaymentModal">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModal('cryptoPayment')">
+    <div class="modal" id="cryptoPaymentModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('cryptoPaymentModal')">
           ✕
         </button>
         <div class="modal-header">
@@ -792,7 +802,7 @@
         </div>
 
         <div class="modal-buttons">
-          <button class="btn btn-back" onclick="openModal('paymentMethod')">
+          <button class="btn btn-back" onclick="openModal('paymentMethodModal', value)">
             ← Back
           </button>
           <button class="btn btn-cancel" onclick="closeModal('cryptoPayment')">

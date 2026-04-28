@@ -104,6 +104,7 @@ function openModal(id, event) {
   event.stopPropagation(); // 🛑 prevent instant close
 
   const modal = document.getElementById(id);
+  console.log(modal)
 
   if (modal) {
     modal.classList.add("show");
