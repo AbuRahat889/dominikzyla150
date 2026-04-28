@@ -126,3 +126,50 @@
   background-color: #475569;
   color: #1effc7;
 }
+
+.language-dropdown {
+  background-color: transparent;
+  border: none;
+  color: var(--font-color-icon-title, #b5bdc9);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%; /* 24px */
+  cursor: pointer;
+}
+
+.language-dropdown option {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  width: 500px;
+  padding: 10px;
+}
+
+/* logout-modal */
+
+.logout-modal {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logout-title {
+  color: var(--font-color-icon-title, #b5bdc9);
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 28.8px */
+  margin-bottom: 16px;
+}
+.logout-description {
+  color: var(--foundation-white-dark-hover, #999);
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 24px */
+}

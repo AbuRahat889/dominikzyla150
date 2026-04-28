@@ -176,3 +176,44 @@ body {
   width: 14px;
   border-radius: 99px;
 }
+
+/* modal css */
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+/* Show modal */
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal box */
+.modal-content {
+  width: 520px;
+  height: auto;
+  border-radius: 16px;
+  border: 0.5px solid rgba(30, 255, 199, 0.3);
+  background: var(--BG-01, #020817);
+  padding: 20px;
+  min-width: 300px;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+}

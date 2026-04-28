@@ -25,8 +25,6 @@ loadComponent("topbar", "components/topbar.html");
 //////////////////////////////
 
 function loadPage(page) {
-  console.log("Loading page:", page);
-
   fetch(`${page}.html`)
     .then((res) => {
       if (!res.ok) {
@@ -96,9 +94,51 @@ document.addEventListener("click", function (event) {
 
 window.loadPage = loadPage;
 window.setActive = setActive;
-window.toggleDropdown = toggleDropdown;
 window.toggleUserMenu = toggleUserMenu;
 
 //////////////////////////////
-// profile page tabs
+// modal
 //////////////////////////////
+
+function openModal(id, event) {
+  event.stopPropagation(); // 🛑 prevent instant close
+
+  const modal = document.getElementById(id);
+  console.log(modal);
+
+  if (modal) {
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+}
+
+// Close on outside click
+document.addEventListener("click", function (event) {
+  document.querySelectorAll(".modal.show").forEach((modal) => {
+    const content = modal.querySelector(".modal-content");
+    console.log(content);
+
+    if (!content.contains(event.target)) {
+      modal.classList.remove("show");
+      document.body.style.overflow = "auto";
+    }
+  });
+});
+
+// Close on ESC key
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    document.querySelectorAll(".modal.show").forEach((modal) => {
+      modal.classList.remove("show");
+    });
+    document.body.style.overflow = "auto";
+  }
+});
