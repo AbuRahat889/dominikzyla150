@@ -104,7 +104,6 @@ function openModal(id, event) {
   event.stopPropagation(); // 🛑 prevent instant close
 
   const modal = document.getElementById(id);
-  console.log(modal);
 
   if (modal) {
     modal.classList.add("show");
@@ -124,8 +123,6 @@ function closeModal(id) {
 document.addEventListener("click", function (event) {
   document.querySelectorAll(".modal.show").forEach((modal) => {
     const content = modal.querySelector(".modal-content");
-    console.log(content);
-
     if (!content.contains(event.target)) {
       modal.classList.remove("show");
       document.body.style.overflow = "auto";
