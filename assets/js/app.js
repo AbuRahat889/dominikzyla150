@@ -44,7 +44,7 @@ function loadPage(page) {
 
 // default page load
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("dashboard");
+  loadPage("support");
 });
 
 //////////////////////////////

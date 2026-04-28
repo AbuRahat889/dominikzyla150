@@ -271,6 +271,12 @@
   transform: translateY(0);
 }
 
+/* support modal */
+/* support-form */
+.support-form div {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;

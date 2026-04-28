@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="assets/css/support.css" />
     <link rel="stylesheet" href="assets/css/webinars.css" />
+    <link rel="stylesheet" href="assets/css/profile.css" />
   </head>
   <body>
     <div class="support-heading">
@@ -51,7 +52,7 @@
       <div class="tickets-panel">
         <div class="card support-card">
           <div class="ticket-header">
-            <div class="avatar">A</div>
+            <div class="details-avatar">A</div>
             <div class="ticket-user">
               <div class="ticket-user-name">Adegbuioduguwa</div>
               <div class="ticket-time">24 May 2025, 11:00 am</div>
@@ -70,7 +71,7 @@
         </div>
         <div class="card support-card">
           <div class="ticket-header">
-            <div class="avatar">A</div>
+            <div class="details-avatar">A</div>
             <div class="ticket-user">
               <div class="ticket-user-name">Adegbuioduguwa</div>
               <div class="ticket-time">24 May 2025, 11:00 am</div>
@@ -89,27 +90,7 @@
         </div>
         <div class="card">
           <div class="ticket-header">
-            <div class="avatar">A</div>
-            <div class="ticket-user">
-              <div class="ticket-user-name">Adegbuioduguwa</div>
-              <div class="ticket-time">24 May 2025, 11:00 am</div>
-            </div>
-          </div>
-          <div class="ticket-description">
-            I am facing an issue where the AI is not giving accurate responses
-            for customer queries.Could you please check and suggest how to
-            improve the accuracy?Thanks a lot for your support.
-          </div>
-          <div class="ticket-badges">
-            <span class="badge pending">Pending</span>
-            <span class="badge priority">High priority</span>
-            <span class="badge department">Finance department</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="ticket-header">
-            <div class="avatar">A</div>
+            <div class="details-avatar">A</div>
             <div class="ticket-user">
               <div class="ticket-user-name">Adegbuioduguwa</div>
               <div class="ticket-time">24 May 2025, 11:00 am</div>
@@ -129,7 +110,27 @@
 
         <div class="card">
           <div class="ticket-header">
-            <div class="avatar">A</div>
+            <div class="details-avatar">A</div>
+            <div class="ticket-user">
+              <div class="ticket-user-name">Adegbuioduguwa</div>
+              <div class="ticket-time">24 May 2025, 11:00 am</div>
+            </div>
+          </div>
+          <div class="ticket-description">
+            I am facing an issue where the AI is not giving accurate responses
+            for customer queries.Could you please check and suggest how to
+            improve the accuracy?Thanks a lot for your support.
+          </div>
+          <div class="ticket-badges">
+            <span class="badge pending">Pending</span>
+            <span class="badge priority">High priority</span>
+            <span class="badge department">Finance department</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ticket-header">
+            <div class="details-avatar">A</div>
             <div class="ticket-user">
               <div class="ticket-user-name">Adegbuioduguwa</div>
               <div class="ticket-time">24 May 2025, 11:00 am</div>
@@ -180,7 +181,89 @@
             </div>
           </div>
 
-          <button class="action-button btn">Ticket Solved</button>
+          <button
+            class="action-button btn"
+            onclick="openModal('support', event)"
+          >
+            Ticket Solved
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="support" class="modal">
+      <div class="modal-content">
+        <div class="close-btn" onclick="closeModal('support')">X</div>
+        <div>
+          <!-- Form -->
+          <form>
+            <!-- Basic Information -->
+            <div class="form-section support-form">
+              <h3 class="form-title">Create new ticket</h3>
+
+              <div class="form-group">
+                <label for="ticketName">Ticket name</label>
+                <input
+                  type="text"
+                  id="ticketName"
+                  placeholder="Help needed for payment failure"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="ticketDescription">Ticket Description</label>
+                <input
+                  type="text"
+                  id="ticketDescription"
+                  placeholder="Help needed for payment failure"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="ticketDescription">Date</label>
+                <input
+                  type="text"
+                  id="date"
+                  placeholder="Help needed for payment failure"
+                  required
+                />
+              </div>
+              <div class="form-row full">
+                <div class="form-group">
+                  <label for="priority">Priority level</label>
+                  <select id="priority" required>
+                    <option value="">Select priority level</option>
+                    <option value="australia" selected>Australia</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="india">India</option>
+                    <option value="germany">Germany</option>
+                    <option value="france">France</option>
+                  </select>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  width: 100%;
+                  justify-content: flex-end;
+                  gap: 16px;
+                "
+              >
+                <button
+                  onclick="closeModal('support')"
+                  class="btn-outline"
+                  style="width: 100%"
+                >
+                  Cancel
+                </button>
+                <button class="btn" style="width: 100%">Create Ticket</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
