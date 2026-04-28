@@ -68,8 +68,8 @@ function setActive(page) {
 // USER MENU TOGGLE
 //////////////////////////////
 
-function toggleUserMenu() {
-  const dropdown = document.getElementById("userDropdown");
+function toggleUserMenu(id) {
+  const dropdown = document.getElementById(id);
   if (dropdown) {
     dropdown.classList.toggle("show");
   }
@@ -80,11 +80,14 @@ function toggleUserMenu() {
 //////////////////////////////
 
 document.addEventListener("click", function (event) {
-  const userMenu = document.querySelector(".user-menu");
+  const menus = document.querySelectorAll(".user-menu");
 
-  if (userMenu && !userMenu.contains(event.target)) {
-    document.getElementById("userDropdown")?.classList.remove("show");
-  }
+  menus.forEach((menu) => {
+    if (!menu.contains(event.target)) {
+      const dropdown = menu.querySelector(".dropdown");
+      dropdown?.classList.remove("show");
+    }
+  });
 });
 
 //////////////////////////////
