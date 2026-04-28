@@ -198,7 +198,7 @@
               </div>
               <button
                 class="package-button btn-upgrade"
-                onclick="openModal('purchaseConfirmation', 'Business', '$299')"
+                onclick="openModal('purchaseConfirmationModal', event)"
               >
                 Upgrade Now
               </button>
@@ -238,7 +238,7 @@
               </div>
               <button
                 class="package-button btn-upgrade"
-                onclick="openModal('purchaseConfirmation', 'Premium', '$599')"
+                onclick="openModal('purchaseConfirmationModal', event)"
               >
                 Upgrade Now
               </button>
@@ -387,7 +387,7 @@
       <div class="modal">
         <button
           class="modal-close"
-          onclick="closeModal('purchaseConfirmation')"
+          onclick="closeModal('purchaseConfirmationModal')"
         >
           ✕
         </button>
@@ -430,7 +430,7 @@
           </button>
           <button
             class="btn btn-secondary white"
-            onclick="closeModal('purchaseConfirmation')"
+            onclick="closeModal('purchaseConfirmationModal')"
           >
             Cancel
           </button>
@@ -582,7 +582,7 @@
         <div class="modal-buttons">
           <button
             class="btn btn-back"
-            onclick="openModal('purchaseConfirmation')"
+            onclick="openModal('purchaseConfirmationModal')"
           >
             ← Back
           </button>
@@ -823,6 +823,6 @@
         }
       };
     </script>
-    <script src="./assets/js/subscription.js"></script>
+    <!-- <script src="./assets/js/subscription.js"></script> -->
   </body>
 </html>
