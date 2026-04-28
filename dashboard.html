@@ -322,10 +322,58 @@
                   New members of the Voidara community from around the world
                 </div>
               </div>
-              <div><i class="fa-solid fa-sliders"></i></div>
+
+              <div
+                class="filter-wrapper"
+                onclick="toggleUserMenu('filterDropdown')"
+              >
+                <i class="fa-solid fa-sliders filter-icon"></i>
+
+                <!-- Dropdown -->
+                <div class="dropdown-menu" id="filterDropdown">
+                  <div
+                    class="dropdown-item active"
+                    onclick="selectLanguage('German', this)"
+                  >
+                    German
+                  </div>
+                  <div
+                    class="dropdown-item"
+                    onclick="selectLanguage('Spanish', this)"
+                  >
+                    Spanish
+                  </div>
+                  <div
+                    class="dropdown-item"
+                    onclick="selectLanguage('English', this)"
+                  >
+                    English
+                  </div>
+                  <div
+                    class="dropdown-item"
+                    onclick="selectLanguage('Italian', this)"
+                  >
+                    Italian
+                  </div>
+                  <div
+                    class="dropdown-item"
+                    onclick="selectLanguage('French', this)"
+                  >
+                    French
+                  </div>
+                  <div
+                    class="dropdown-item"
+                    onclick="selectLanguage('Russian', this)"
+                  >
+                    Russian
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="selected-county">Australia <i class="fa-regular fa-circle-xmark"></i></div>
+          <div class="selected-county">
+            Australia <i class="fa-regular fa-circle-xmark"></i>
+          </div>
           <div class="country-cards-section">
             <div class="country-cards">
               <div class="country-cards-left">
@@ -564,5 +612,6 @@
         </div>
       </section>
     </div>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
