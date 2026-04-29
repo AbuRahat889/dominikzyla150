@@ -104,7 +104,7 @@ function openModal(id, event) {
   event.stopPropagation(); // 🛑 prevent instant close
 
   const modal = document.getElementById(id);
-  console.log(modal)
+  console.log(modal);
 
   if (modal) {
     modal.classList.add("show");
@@ -118,7 +118,7 @@ function closeModal(id) {
     modal.classList.remove("show");
     document.body.style.overflow = "auto";
   }
-} 
+}
 
 // Close on outside click
 document.addEventListener("click", function (event) {
@@ -140,3 +140,23 @@ document.addEventListener("keydown", function (event) {
     document.body.style.overflow = "auto";
   }
 });
+
+function selectPaymentMethod(element, method) {
+  document.querySelectorAll(".method-option").forEach((option) => {
+    option.classList.remove("selected");
+  });
+
+  element.classList.add("selected");
+  window.selectedPaymentMethod = method;
+
+  // Update button text
+  const btn = document.getElementById("continuePaymentBtn");
+  if (btn) {
+    btn.textContent =
+      method === "creditCard" ? "Continue with Bank" : "Continue with Crypto";
+  }
+}
+
+window.selectPaymentMethod = selectPaymentMethod;
+
+window.selectPaymentMethod = selectPaymentMethod;

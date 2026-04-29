@@ -764,6 +764,7 @@ tbody tr:hover {
 /* Modal Buttons */
 .modal-buttons {
   display: flex;
+  align-items: center;
   gap: 12px;
   margin-top: 30px;
 }
@@ -796,10 +797,6 @@ tbody tr:hover {
   flex: 1;
 }
 
-.btn-primary:hover {
-  background: #00d4ff;
-}
-
 .btn-secondary {
   background: rgba(148, 163, 184, 0.1);
   color: #cbd5e1;
@@ -807,19 +804,10 @@ tbody tr:hover {
   flex: 1;
 }
 
-.btn-secondary:hover {
-  background: rgba(148, 163, 184, 0.15);
-  border-color: rgba(148, 163, 184, 0.3);
-}
-
 .btn-secondary.white {
   background: #ffffff;
   color: #0f172a;
   border: none;
-}
-
-.btn-secondary.white:hover {
-  background: #f0f0f0;
 }
 
 .btn-back {
