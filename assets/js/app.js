@@ -51,16 +51,16 @@
 // SIDEBAR ACTIVE STATE
 //////////////////////////////
 
-function setActive(page) {
-  document.querySelectorAll(".sidebar-menu a").forEach((link) => {
-    link.classList.remove("active");
-  });
+// function setActive(page) {
+//   document.querySelectorAll(".sidebar-menu a").forEach((link) => {
+//     link.classList.remove("active");
+//   });
 
-  const activeLink = document.querySelector(`[data-page="${page}"]`);
-  if (activeLink) {
-    activeLink.classList.add("active");
-  }
-}
+//   const activeLink = document.querySelector(`[data-page="${page}"]`);
+//   if (activeLink) {
+//     activeLink.classList.add("active");
+//   }
+// }
 
 //////////////////////////////
 // USER MENU TOGGLE
@@ -89,12 +89,11 @@ document.addEventListener("click", function (event) {
 });
 
 //////////////////////////////
-// GLOBAL CLICK HANDLER (OPTIONAL CLEANUP)
+// GLOBAL CLICK HANDLER
 //////////////////////////////
 
-window.loadPage = loadPage;
-window.setActive = setActive;
-window.toggleUserMenu = toggleUserMenu;
+// window.loadPage = loadPage;
+// window.setActive = setActive;
 
 //////////////////////////////
 // modal
@@ -141,6 +140,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+// set payment method selection
 function selectPaymentMethod(element, method) {
   document.querySelectorAll(".method-option").forEach((option) => {
     option.classList.remove("selected");
@@ -157,6 +157,6 @@ function selectPaymentMethod(element, method) {
   }
 }
 
+window.toggleUserMenu = toggleUserMenu;
 window.selectPaymentMethod = selectPaymentMethod;
-
 window.selectPaymentMethod = selectPaymentMethod;
