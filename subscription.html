@@ -2,853 +2,1405 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment & Subscription Management</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/topbar.css" />
     <link rel="stylesheet" href="assets/css/subscription.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="">
-      <!-- Main Page Content -->
-      <div id="mainPage" class="main-page">
-        <!-- Header -->
-        <div class="page-header">
-          <h1 class="page-title">Package Purchase & Upgrades</h1>
-          <p class="page-subtitle">
-            Manage your subscription and upgrade options
-          </p>
-        </div>
-
-        <!-- Steps -->
-        <div class="cards-grid">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon cyan">
-                <i class="fa-regular fa-circle-check"></i>
-              </div>
-              <div class="card-label">Email Verified</div>
-            </div>
-            <div class="card-value-section">
-              <div class="card-value">Verified</div>
+    <div class="container">
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <div class="logo">
+              <img class="logo-icon" src="/assets/images/logo.png" alt="" />
             </div>
           </div>
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">
+
+          <!-- General -->
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">General</div>
+            <ul class="sidebar-menu">
+              <li>
+                <a href="/index.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        class=""
+                      >
+                        <path
+                          d="M10.5 8.75V6.75C10.5 5.10626 10.5 4.28439 10.046 3.73121C9.96291 3.62995 9.87005 3.53709 9.76879 3.45398C9.21561 3 8.39374 3 6.75 3C5.10626 3 4.28439 3 3.73121 3.45398C3.62995 3.53709 3.53709 3.62995 3.45398 3.73121C3 4.28439 3 5.10626 3 6.75V8.75C3 10.3937 3 11.2156 3.45398 11.7688C3.53709 11.8701 3.62995 11.9629 3.73121 12.046C4.28439 12.5 5.10626 12.5 6.75 12.5C8.39374 12.5 9.21561 12.5 9.76879 12.046C9.87005 11.9629 9.96291 11.8701 10.046 11.7688C10.5 11.2156 10.5 10.3937 10.5 8.75Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M7.75 15.5H5.75C5.05222 15.5 4.70333 15.5 4.41943 15.5861C3.78023 15.78 3.28002 16.2802 3.08612 16.9194C3 17.2033 3 17.5522 3 18.25C3 18.9478 3 19.2967 3.08612 19.5806C3.28002 20.2198 3.78023 20.72 4.41943 20.9139C4.70333 21 5.05222 21 5.75 21H7.75C8.44778 21 8.79667 21 9.08057 20.9139C9.71977 20.72 10.22 20.2198 10.4139 19.5806C10.5 19.2967 10.5 18.9478 10.5 18.25C10.5 17.5522 10.5 17.2033 10.4139 16.9194C10.22 16.2802 9.71977 15.78 9.08057 15.5861C8.79667 15.5 8.44778 15.5 7.75 15.5Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M21 17.25V15.25C21 13.6063 21 12.7844 20.546 12.2312C20.4629 12.1299 20.3701 12.0371 20.2688 11.954C19.7156 11.5 18.8937 11.5 17.25 11.5C15.6063 11.5 14.7844 11.5 14.2312 11.954C14.1299 12.0371 14.0371 12.1299 13.954 12.2312C13.5 12.7844 13.5 13.6063 13.5 15.25V17.25C13.5 18.8937 13.5 19.7156 13.954 20.2688C14.0371 20.3701 14.1299 20.4629 14.2312 20.546C14.7844 21 15.6063 21 17.25 21C18.8937 21 19.7156 21 20.2688 20.546C20.3701 20.4629 20.4629 20.3701 20.546 20.2688C21 19.7156 21 18.8937 21 17.25Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M18.25 3H16.25C15.5522 3 15.2033 3 14.9194 3.08612C14.2802 3.28002 13.78 3.78023 13.5861 4.41943C13.5 4.70333 13.5 5.05222 13.5 5.75C13.5 6.44778 13.5 6.79667 13.5861 7.08057C13.78 7.71977 14.2802 8.21998 14.9194 8.41388C15.2033 8.5 15.5522 8.5 16.25 8.5H18.25C18.9478 8.5 19.2967 8.5 19.5806 8.41388C20.2198 8.21998 20.72 7.71977 20.9139 7.08057C21 6.79667 21 6.44778 21 5.75C21 5.05222 21 4.70333 20.9139 4.41943C20.72 3.78023 20.2198 3.28002 19.5806 3.08612C19.2967 3 18.9478 3 18.25 3Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <p>Dashboard</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/backofficeai.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9.60059 6.11211C9.92247 5.29596 11.0775 5.29596 11.3994 6.11211L12.3103 8.4216C12.8999 9.91665 14.0833 11.1001 15.5784 11.6897L17.8879 12.6006C18.704 12.9225 18.704 14.0775 17.8879 14.3994L15.5784 15.3103C14.0833 15.8999 12.8999 17.0833 12.3103 18.5784L11.3994 20.8879C11.0775 21.704 9.92247 21.704 9.60059 20.8879L8.68974 18.5784C8.1001 17.0833 6.91665 15.8999 5.4216 15.3103L3.11211 14.3994C2.29596 14.0775 2.29596 12.9225 3.11211 12.6006L5.4216 11.6897C6.91665 11.1001 8.1001 9.91665 8.68974 8.4216L9.60059 6.11211Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M18.1627 2.72954C18.2834 2.42349 18.7166 2.42349 18.8373 2.72954L19.1788 3.5956C19.4 4.15624 19.8438 4.60004 20.4044 4.82115L21.2705 5.16272C21.5765 5.28343 21.5765 5.71657 21.2705 5.83728L20.4044 6.17885C19.8438 6.39996 19.4 6.84376 19.1788 7.4044L18.8373 8.27046C18.7166 8.57651 18.2834 8.57651 18.1627 8.27046L17.8212 7.4044C17.6 6.84376 17.1562 6.39996 16.5956 6.17885L15.7295 5.83728C15.4235 5.71657 15.4235 5.28343 15.7295 5.16272L16.5956 4.82115C17.1562 4.60004 17.6 4.15624 17.8212 3.5956L18.1627 2.72954Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
+                    Backoffice AI
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/webinars.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M11 8H13"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+                    Webinars
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/support.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 8V12.5"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 15.9883V15.9983"
+                          stroke="#B5BDC9"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    Support
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/agents.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M18.5 20V17.9704C18.5 16.7281 17.9407 15.5099 16.8103 14.9946C15.4315 14.3661 13.7779 14 12 14C10.2221 14 8.5685 14.3661 7.18968 14.9946C6.05927 15.5099 5.5 16.7281 5.5 17.9704V20"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 11C13.933 11 15.5 9.433 15.5 7.5C15.5 5.567 13.933 4 12 4C10.067 4 8.5 5.567 8.5 7.5C8.5 9.433 10.067 11 12 11Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    Agent
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Team -->
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Team</div>
+            <ul class="sidebar-menu">
+              <li>
+                <a href="/referral-link.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        class=""
+                      >
+                        <path
+                          d="M10.5 8.75V6.75C10.5 5.10626 10.5 4.28439 10.046 3.73121C9.96291 3.62995 9.87005 3.53709 9.76879 3.45398C9.21561 3 8.39374 3 6.75 3C5.10626 3 4.28439 3 3.73121 3.45398C3.62995 3.53709 3.53709 3.62995 3.45398 3.73121C3 4.28439 3 5.10626 3 6.75V8.75C3 10.3937 3 11.2156 3.45398 11.7688C3.53709 11.8701 3.62995 11.9629 3.73121 12.046C4.28439 12.5 5.10626 12.5 6.75 12.5C8.39374 12.5 9.21561 12.5 9.76879 12.046C9.87005 11.9629 9.96291 11.8701 10.046 11.7688C10.5 11.2156 10.5 10.3937 10.5 8.75Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M7.75 15.5H5.75C5.05222 15.5 4.70333 15.5 4.41943 15.5861C3.78023 15.78 3.28002 16.2802 3.08612 16.9194C3 17.2033 3 17.5522 3 18.25C3 18.9478 3 19.2967 3.08612 19.5806C3.28002 20.2198 3.78023 20.72 4.41943 20.9139C4.70333 21 5.05222 21 5.75 21H7.75C8.44778 21 8.79667 21 9.08057 20.9139C9.71977 20.72 10.22 20.2198 10.4139 19.5806C10.5 19.2967 10.5 18.9478 10.5 18.25C10.5 17.5522 10.5 17.2033 10.4139 16.9194C10.22 16.2802 9.71977 15.78 9.08057 15.5861C8.79667 15.5 8.44778 15.5 7.75 15.5Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M21 17.25V15.25C21 13.6063 21 12.7844 20.546 12.2312C20.4629 12.1299 20.3701 12.0371 20.2688 11.954C19.7156 11.5 18.8937 11.5 17.25 11.5C15.6063 11.5 14.7844 11.5 14.2312 11.954C14.1299 12.0371 14.0371 12.1299 13.954 12.2312C13.5 12.7844 13.5 13.6063 13.5 15.25V17.25C13.5 18.8937 13.5 19.7156 13.954 20.2688C14.0371 20.3701 14.1299 20.4629 14.2312 20.546C14.7844 21 15.6063 21 17.25 21C18.8937 21 19.7156 21 20.2688 20.546C20.3701 20.4629 20.4629 20.3701 20.546 20.2688C21 19.7156 21 18.8937 21 17.25Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M18.25 3H16.25C15.5522 3 15.2033 3 14.9194 3.08612C14.2802 3.28002 13.78 3.78023 13.5861 4.41943C13.5 4.70333 13.5 5.05222 13.5 5.75C13.5 6.44778 13.5 6.79667 13.5861 7.08057C13.78 7.71977 14.2802 8.21998 14.9194 8.41388C15.2033 8.5 15.5522 8.5 16.25 8.5H18.25C18.9478 8.5 19.2967 8.5 19.5806 8.41388C20.2198 8.21998 20.72 7.71977 20.9139 7.08057C21 6.79667 21 6.44778 21 5.75C21 5.05222 21 4.70333 20.9139 4.41943C20.72 3.78023 20.2198 3.28002 19.5806 3.08612C19.2967 3 18.9478 3 18.25 3Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <p>Referral Link</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/team-management.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9.60059 6.11211C9.92247 5.29596 11.0775 5.29596 11.3994 6.11211L12.3103 8.4216C12.8999 9.91665 14.0833 11.1001 15.5784 11.6897L17.8879 12.6006C18.704 12.9225 18.704 14.0775 17.8879 14.3994L15.5784 15.3103C14.0833 15.8999 12.8999 17.0833 12.3103 18.5784L11.3994 20.8879C11.0775 21.704 9.92247 21.704 9.60059 20.8879L8.68974 18.5784C8.1001 17.0833 6.91665 15.8999 5.4216 15.3103L3.11211 14.3994C2.29596 14.0775 2.29596 12.9225 3.11211 12.6006L5.4216 11.6897C6.91665 11.1001 8.1001 9.91665 8.68974 8.4216L9.60059 6.11211Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M18.1627 2.72954C18.2834 2.42349 18.7166 2.42349 18.8373 2.72954L19.1788 3.5956C19.4 4.15624 19.8438 4.60004 20.4044 4.82115L21.2705 5.16272C21.5765 5.28343 21.5765 5.71657 21.2705 5.83728L20.4044 6.17885C19.8438 6.39996 19.4 6.84376 19.1788 7.4044L18.8373 8.27046C18.7166 8.57651 18.2834 8.57651 18.1627 8.27046L17.8212 7.4044C17.6 6.84376 17.1562 6.39996 16.5956 6.17885L15.7295 5.83728C15.4235 5.71657 15.4235 5.28343 15.7295 5.16272L16.5956 4.82115C17.1562 4.60004 17.6 4.15624 17.8212 3.5956L18.1627 2.72954Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
+                    Team Management
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/agent-leads.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M11 8H13"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M2 11C2 7.70017 2 6.05025 3.02513 5.02513C4.05025 4 5.70017 4 9 4H10C13.2998 4 14.9497 4 15.9749 5.02513C17 6.05025 17 7.70017 17 11V13C17 16.2998 17 17.9497 15.9749 18.9749C14.9497 20 13.2998 20 10 20H9C5.70017 20 4.05025 20 3.02513 18.9749C2 17.9497 2 16.2998 2 13V11Z"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M17 8.90585L17.1259 8.80196C19.2417 7.05623 20.2996 6.18336 21.1498 6.60482C22 7.02628 22 8.42355 22 11.2181V12.7819C22 15.5765 22 16.9737 21.1498 17.3952C20.2996 17.8166 19.2417 16.9438 17.1259 15.198L17 15.0941"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </span>
+                    Agent Leads
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Subscription -->
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Payments</div>
+            <ul class="sidebar-menu">
+              <li>
+                <a href="/subscription.html" class="active">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </span>
+                    <p>Subscriptions</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/withdraw.html">
+                  <div class="menu-label">
+                    <span class="menu-icon">
+                      <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </span>
+                    <p>Withdraw</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- navbar -->
+        <div id="topbar">
+          <nav class="topbar">
+            <div class="topbar-left">
+              <span class="welcome-text">Welcome Back! 👋</span>
+            </div>
+
+            <div class="topbar-right">
+              <div class="language-selector">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-package-icon lucide-package"
                 >
                   <path
-                    d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"
+                    d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                    stroke="#B5BDC9"
+                    stroke-width="1.5"
                   />
-                  <path d="M12 22V12" />
-                  <polyline points="3.29 7 12 12 20.71 7" />
-                  <path d="m7.5 4.27 9 5.15" />
+                  <path
+                    d="M2 12.9506C8.14512 13.5607 13.5577 8.11477 12.9506 2"
+                    stroke="#B5BDC9"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M11.0507 22.0012C10.4406 15.856 15.8866 10.4434 22.0013 11.0505"
+                    stroke="#B5BDC9"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M17 20C17 12.8203 11.1797 7 4 7"
+                    stroke="#B5BDC9"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
                 </svg>
+                <select name="" id="" class="language-dropdown">
+                  <option value="en" class="">EN</option>
+                  <option value="es">ES</option>
+                  <option value="fr">FR</option>
+                </select>
               </div>
-              <div class="card-label">Total Withdrawn</div>
-            </div>
-            <div class="card-value-section">
-              <div class="card-value">Business</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon emerald">
-                <i class="fa-solid fa-arrow-up"></i>
-              </div>
-              <div class="card-label">Available Balance</div>
-            </div>
-            <div class="card-value-section">
-              <div class="card-value">2</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">
-                <i class="fa-solid fa-circle-info"></i>
-              </div>
-              <div class="card-label">Target</div>
-            </div>
-            <div class="card-value-section">
-              <div class="card-value">3</div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Rules Section -->
-        <div class="rules-section">
-          <div class="rules-header" onclick="toggleRules()">
-            <div class="card-icon">
-              <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
-            <div>
-              <div class="rules-title">Important Rules</div>
-              <div class="rules-subtitle">
-                Review package terms and upgrade requirements
-              </div>
-            </div>
-          </div>
-          <ul class="rules-list" id="rulesList">
-            <li>
-              Packages Upgrades take effect effect immediately upon payment
-              confirmation
-            </li>
-            <li>
-              Downgrades are processed at the end of the current billing cycle
-            </li>
-            <li>
-              Binary volume requirements must be maintained for package benefits
-            </li>
-            <li>
-              Refunds are available within 14 days of purchase (terms apply)
-            </li>
-          </ul>
-        </div>
+              <div class="user-menu">
+                <div
+                  class="user-menu-toggle"
+                  onclick="toggleUserMenu('userDropdown')"
+                >
+                  <div class="user-avatar">AK</div>
+                  <span>Alesia K.</span>
+                </div>
 
-        <!-- Packages -->
-        <div class="packages-section">
-          <div class="section-header">
-            <h2 class="section-title">Available Packages</h2>
-            <p class="section-subtitle">
-              Choose the perfect plan to accelerate your success
-            </p>
-          </div>
-          <div class="packages-grid">
-            <!-- Starter Package -->
-            <div class="package-card">
-              <div class="package-header">
-                <h3 class="package-name">Starter</h3>
-                <p class="package-desc">Perfect for beginners</p>
-                <div class="package-pricing-info">
-                  <div class="package-price">$99</div>
-                  <p class="package-period">one-time</p>
-                </div>
-              </div>
-              <div class="package-features">
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Binary Volume: $500</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Monthly Fee: $19</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Max Team Size: 5</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Email Support</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Mobile App Access</span>
-                </div>
-              </div>
-              <button
-                class="package-button btn-current"
-                onclick="alert('You are currently on this plan')"
-              >
-                Current Plan
-              </button>
-            </div>
+                <div class="user-dropdown" id="userDropdown">
+                  <div class="user-dropdown-header">Alesia Karapova</div>
+                  <a href="/profile.html" class="user-dropdown-item">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M18.5 20V17.9704C18.5 16.7281 17.9407 15.5099 16.8103 14.9946C15.4315 14.3661 13.7779 14 12 14C10.2221 14 8.5685 14.3661 7.18968 14.9946C6.05927 15.5099 5.5 16.7281 5.5 17.9704V20"
+                        stroke="#B5BDC9"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12 11C13.933 11 15.5 9.433 15.5 7.5C15.5 5.567 13.933 4 12 4C10.067 4 8.5 5.567 8.5 7.5C8.5 9.433 10.067 11 12 11Z"
+                        stroke="#B5BDC9"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Profile
+                  </a>
 
-            <!-- Business Package -->
-            <div class="package-card featured">
-              <div class="package-header">
-                <h3 class="package-name">Business</h3>
-                <p class="package-desc">Most popular choice</p>
-                <div class="package-pricing-info">
-                  <div class="package-price">$299</div>
-                  <p class="package-period">one-time</p>
-                </div>
-              </div>
-              <div class="package-features">
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Binary Volume: $1,500</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Monthly Fee: $39</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Max Team Size: 15</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Priority Support</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Advanced Analytics</span>
-                </div>
-              </div>
-              <button
-                class="package-button btn-upgrade"
-                onclick="openModal('purchaseConfirmationModal', event)"
-              >
-                Upgrade Now
-              </button>
-            </div>
-
-            <!-- Premium Package -->
-            <div class="package-card">
-              <div class="package-header">
-                <h3 class="package-name">Premium</h3>
-                <p class="package-desc">For power users</p>
-                <div class="package-pricing-info">
-                  <div class="package-price">$599</div>
-                  <p class="package-period">one-time</p>
-                </div>
-              </div>
-              <div class="package-features">
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Binary Volume: $3,000</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Monthly Fee: $79</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Unlimited Team</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>VIP Support</span>
-                </div>
-                <div class="feature">
-                  <span class="feature-check">✓</span>
-                  <span>Custom Integrations</span>
-                </div>
-              </div>
-              <button
-                class="package-button btn-upgrade"
-                onclick="openModal('purchaseConfirmationModal', event)"
-              >
-                Upgrade Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Recent Orders -->
-        <div class="table-section">
-          <div class="section-header">
-            <h2 class="section-title">Recent Orders</h2>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Order ID</th>
-                  <th>Package</th>
-                  <th>Price</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>ORD-2025-001</td>
-                  <td>Business</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-002</td>
-                  <td>Starter</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-003</td>
-                  <td>Starter</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-004</td>
-                  <td>Premium</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td>
-                    <span class="status status-cancelled">Cancelled</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-005</td>
-                  <td>Premium</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-006</td>
-                  <td>Business</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-007</td>
-                  <td>Starter</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Billing History -->
-        <div class="table-section">
-          <div class="section-header">
-            <h2 class="section-title">Billing History</h2>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Invoice</th>
-                  <th>Description</th>
-                  <th>Amount</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>ORD-2025-001</td>
-                  <td>Business Package - Monthly Fee</td>
-                  <td>$39.00</td>
-                  <td>Jan 15, 2025</td>
-                  <td><span class="status status-paid">Paid</span></td>
-                  <td style="color: #06b6d4; cursor: pointer">Download</td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-002</td>
-                  <td>Starter</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td><span class="status status-paid">Paid</span></td>
-                  <td style="color: #06b6d4; cursor: pointer">Download</td>
-                </tr>
-                <tr>
-                  <td>ORD-2025-003</td>
-                  <td>Starter</td>
-                  <td>$99</td>
-                  <td>Jan 15, 2025</td>
-                  <td><span class="status status-paid">Paid</span></td>
-                  <td style="color: #06b6d4; cursor: pointer">Download</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== MODALS ===== -->
-
-    <!-- 1. Purchase Confirmation Modal -->
-    <div class="modal" id="purchaseConfirmationModal">
-      <div class="modal-content">
-        <button
-          class="close-btn"
-          onclick="closeModal('purchaseConfirmationModal')"
-        >
-          ✕
-        </button>
-        <div class="modal-header">
-          <div class="modal-icon">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-          <h2 class="modal-title">Purchase Confirmation</h2>
-        </div>
-
-        <div style="text-align: center; margin-bottom: 25px">
-          <span class="package-badge" id="confirmPackageName"
-            >Starter Package</span
-          >
-        </div>
-
-        <div class="confirmation-box">
-          <div class="confirmation-row">
-            <span class="confirmation-label">Package Price:</span>
-            <span class="confirmation-value" id="confirmPackagePrice"
-              >500.00 EUR</span
-            >
-          </div>
-          <div class="confirmation-row">
-            <span class="confirmation-label">Binary Volume:</span>
-            <span class="confirmation-value">500.00 VP</span>
-          </div>
-          <div class="confirmation-row total-row">
-            <span>Total:</span>
-            <span id="confirmTotal">500.00 EUR</span>
-          </div>
-        </div>
-
-        <div class="info-box">
-          <strong style="color: #06b6d4">ℹ</strong> After the first month, a
-          monthly subscription of 99.00 EUR will be automatically set up.
-        </div>
-
-        <div class="modal-buttons column">
-          <button
-            class="btn btn-primary"
-            onclick="
-              closeModal('purchaseConfirmationModal');
-              openModal('paymentMethodModal', event);
-            "
-          >
-            Choose Payment Method
-          </button>
-          <button
-            class="btn btn-secondary white"
-            onclick="closeModal('purchaseConfirmationModal')"
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2. Select Payment Method Modal -->
-    <div class="modal" id="paymentMethodModal">
-      <div class="modal-content">
-        <button
-          class="close-btn"
-          onclick="closeModal('paymentMethodModal', event)"
-        >
-          ✕
-        </button>
-        <div class="modal-header">
-          <h2 class="modal-title">Select Payment Method</h2>
-          <p style="color: #a0aec0">
-            Choose your preferred payment option to continue
-          </p>
-        </div>
-
-        <div class="method-list">
-          <!-- Credit Card Method -->
-          <div
-            class="method-option selected"
-            onclick="selectPaymentMethod(this, 'creditCard')"
-          >
-            <div class="method-content">
-              <div class="method-icons">
-                <i class="fa-solid fa-credit-card"></i>
-              </div>
-              <div>
-                <div class="method-header">
-                  <span class="method-name">Credit Card / Bank Transfer</span>
-                  <span class="method-badge">INSTANT</span>
-                </div>
-                <p class="method-desc">
-                  Secure payment processing via Stripe. Supports all major
-                  credit cards, debit cards, and bank transfers with
-                  industry-standard encryption.
-                </p>
-                <div class="method-details">
-                  <div class="method-detail">
-                    <span class="detail-icon"
-                      ><i class="fa-solid fa-clock"></i
-                    ></span>
-                    <span>Instant processing</span>
-                  </div>
-                  <div class="method-detail">
-                    <span class="detail-icon">%</span>
-                    <span>2.9% + $0.30 fee</span>
+                  <div
+                    class="user-dropdown-item"
+                    onclick="openModal('logout', event)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M8.33333 6.66666V4.99999C8.33333 4.55797 8.50893 4.13404 8.82149 3.82148C9.13405 3.50892 9.55797 3.33333 10 3.33333H15.8333C16.2754 3.33333 16.6993 3.50892 17.0118 3.82148C17.3244 4.13404 17.5 4.55797 17.5 4.99999V15C17.5 15.442 17.3244 15.8659 17.0118 16.1785C16.6993 16.4911 16.2754 16.6667 15.8333 16.6667H10C9.55797 16.6667 9.13405 16.4911 8.82149 16.1785C8.50893 15.8659 8.33333 15.442 8.33333 15V13.3333"
+                        stroke="#A0AEC0"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14.1667 10H2.50008M2.50008 10L5.00008 7.5M2.50008 10L5.00008 12.5"
+                        stroke="#A0AEC0"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Logout
                   </div>
                 </div>
-                <div class="method-supports">
-                  <span style="font-size: 12px; color: #a0aec0">Supports:</span>
-                  <img src="/assets/images/visa.png" />
-                  <img src="/assets/images/mastercard.png" />
-                  <img src="/assets/images/american_express.png" />
-                  <img src="/assets/images/discover.png" />
-                </div>
               </div>
             </div>
-            <div class="method-radio">
-              <div class="method-radio-inner"></div>
+          </nav>
+
+          <!-- Modal 1 -->
+          <div id="logout" class="modal">
+            <div class="modal-content">
+              <div class="close-btn" onclick="closeModal('logout')">X</div>
+              <div class="logout-modal">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="89"
+                  height="89"
+                  viewBox="0 0 89 89"
+                  fill="none"
+                >
+                  <path
+                    d="M43.2618 53.7368C43.2535 53.7368 43.2453 53.7368 43.237 53.7368C41.7121 53.7229 40.4855 52.4757 40.4993 50.9494L40.5118 49.5682C40.5118 49.4894 40.5159 49.4093 40.5242 49.3306C40.9068 45.3125 43.574 42.8498 45.7191 40.8704C46.4456 40.1991 47.1335 39.5651 47.7191 38.9035C48.4332 38.0983 49.4692 36.449 48.3794 34.4587C47.1238 32.1603 44.0574 31.5097 41.6748 32.0553C39.1858 32.6244 38.2686 34.7501 37.9426 35.9656C37.5476 37.4394 36.0324 38.3137 34.5586 37.9201C33.0848 37.525 32.2104 36.0098 32.6041 34.536C33.705 30.424 36.5614 27.5579 40.4399 26.6698C45.6597 25.4778 50.9167 27.5869 53.2248 31.8067C55.1461 35.3206 54.6199 39.4436 51.8505 42.568C51.0811 43.4354 50.2593 44.1951 49.4637 44.9285C47.4816 46.7587 46.2426 47.9825 46.0326 49.7491L46.0216 50.9964C46.0105 52.5171 44.7757 53.7368 43.2618 53.7368Z"
+                    fill="#1EFFC7"
+                  />
+                  <path
+                    d="M43.2613 62.0174C42.543 62.0174 41.8248 61.7274 41.3137 61.2163C40.7888 60.7052 40.4988 59.987 40.4988 59.2549C40.4988 58.5367 40.7888 57.8184 41.3137 57.3074C42.3358 56.2852 44.1867 56.2852 45.2088 57.3074C45.7337 57.8184 46.0238 58.5367 46.0238 59.2549C46.0238 59.987 45.7337 60.6914 45.2227 61.2163C44.6978 61.7274 43.9933 62.0174 43.2613 62.0174Z"
+                    fill="#1EFFC7"
+                  />
+                  <path
+                    d="M44.0939 80.1083C40.9516 80.1083 37.8368 79.6994 34.8354 78.8914C21.9014 75.412 11.774 64.6977 9.03502 51.5938C6.24351 38.244 11.3956 24.2105 22.1624 15.8415C28.3863 11.003 36.236 8.33716 44.2666 8.33716C49.8261 8.33716 55.347 9.63001 60.2338 12.0734C72.3018 18.1109 80.099 30.7245 80.099 44.2096C80.099 55.2126 74.9068 65.8179 66.2105 72.5777C59.9645 77.4342 52.1093 80.1083 44.0939 80.1083ZM44.2679 13.8622C37.4598 13.8622 30.8132 16.1136 25.5548 20.2035C16.4427 27.2865 12.0807 39.1639 14.444 50.4625C16.7617 61.5471 25.3296 70.6122 36.2719 73.5556C38.8051 74.2366 41.4378 74.5833 44.0939 74.5833H44.0953C50.8883 74.5833 57.5376 72.3222 62.8209 68.2157C70.1816 62.4946 74.5753 53.5206 74.5753 44.2096C74.5753 32.7991 67.9771 22.1248 57.7641 17.0156C53.6397 14.9533 48.9739 13.8622 44.2679 13.8622Z"
+                    fill="#1EFFC7"
+                  />
+                </svg>
+                <div>
+                  <p class="logout-title">Are You Sure?</p>
+                  <p class="logout-description">Do you want to log out ?</p>
+                </div>
+                <div style="display: flex; gap: 24px; margin-top: 20px">
+                  <button
+                    class="btn"
+                    onclick="
+                      closeModal('logout');
+                      alert('Logged out!');
+                    "
+                  >
+                    Logout
+                  </button>
+                  <button class="btn-outline" onclick="closeModal('logout')">
+                    Cancel
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Cryptocurrency Method -->
-          <div
-            class="method-option"
-            onclick="selectPaymentMethod(this, 'crypto')"
-          >
-            <div class="method-content">
-              <div class="method-icons">
-                <i class="fa-brands fa-bitcoin"></i>
-              </div>
-              <div>
-                <div class="method-header">
-                  <span class="method-name">Cryptocurrency Payment</span>
-                  <span class="method-badge recommended">LOW FEES</span>
+        <!-- main page -->
+        <div id="content" class="content">
+          <div>
+            <div class="">
+              <!-- Main Page Content -->
+              <div id="mainPage" class="main-page">
+                <!-- Header -->
+                <div class="page-header">
+                  <h1 class="page-title">Package Purchase & Upgrades</h1>
+                  <p class="page-subtitle">
+                    Manage your subscription and upgrade options
+                  </p>
                 </div>
+
+                <!-- Steps -->
+                <div class="cards-grid">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="card-icon cyan">
+                        <i class="fa-regular fa-circle-check"></i>
+                      </div>
+                      <div class="card-label">Email Verified</div>
+                    </div>
+                    <div class="card-value-section">
+                      <div class="card-value">Verified</div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="card-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-package-icon lucide-package"
+                        >
+                          <path
+                            d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"
+                          />
+                          <path d="M12 22V12" />
+                          <polyline points="3.29 7 12 12 20.71 7" />
+                          <path d="m7.5 4.27 9 5.15" />
+                        </svg>
+                      </div>
+                      <div class="card-label">Total Withdrawn</div>
+                    </div>
+                    <div class="card-value-section">
+                      <div class="card-value">Business</div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="card-icon emerald">
+                        <i class="fa-solid fa-arrow-up"></i>
+                      </div>
+                      <div class="card-label">Available Balance</div>
+                    </div>
+                    <div class="card-value-section">
+                      <div class="card-value">2</div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="card-icon">
+                        <i class="fa-solid fa-circle-info"></i>
+                      </div>
+                      <div class="card-label">Target</div>
+                    </div>
+                    <div class="card-value-section">
+                      <div class="card-value">3</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Rules Section -->
+                <div class="rules-section">
+                  <div class="rules-header" onclick="toggleRules()">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                      <div class="rules-title">Important Rules</div>
+                      <div class="rules-subtitle">
+                        Review package terms and upgrade requirements
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="rules-list" id="rulesList">
+                    <li>
+                      Packages Upgrades take effect effect immediately upon
+                      payment confirmation
+                    </li>
+                    <li>
+                      Downgrades are processed at the end of the current billing
+                      cycle
+                    </li>
+                    <li>
+                      Binary volume requirements must be maintained for package
+                      benefits
+                    </li>
+                    <li>
+                      Refunds are available within 14 days of purchase (terms
+                      apply)
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Packages -->
+                <div class="packages-section">
+                  <div class="section-header">
+                    <h2 class="section-title">Available Packages</h2>
+                    <p class="section-subtitle">
+                      Choose the perfect plan to accelerate your success
+                    </p>
+                  </div>
+                  <div class="packages-grid">
+                    <!-- Starter Package -->
+                    <div class="package-card">
+                      <div class="package-header">
+                        <h3 class="package-name">Starter</h3>
+                        <p class="package-desc">Perfect for beginners</p>
+                        <div class="package-pricing-info">
+                          <div class="package-price">$99</div>
+                          <p class="package-period">one-time</p>
+                        </div>
+                      </div>
+                      <div class="package-features">
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Binary Volume: $500</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Monthly Fee: $19</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Max Team Size: 5</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Email Support</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Mobile App Access</span>
+                        </div>
+                      </div>
+                      <button
+                        class="package-button btn-current"
+                        onclick="alert('You are currently on this plan')"
+                      >
+                        Current Plan
+                      </button>
+                    </div>
+
+                    <!-- Business Package -->
+                    <div class="package-card featured">
+                      <div class="package-header">
+                        <h3 class="package-name">Business</h3>
+                        <p class="package-desc">Most popular choice</p>
+                        <div class="package-pricing-info">
+                          <div class="package-price">$299</div>
+                          <p class="package-period">one-time</p>
+                        </div>
+                      </div>
+                      <div class="package-features">
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Binary Volume: $1,500</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Monthly Fee: $39</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Max Team Size: 15</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Priority Support</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Advanced Analytics</span>
+                        </div>
+                      </div>
+                      <button
+                        class="package-button btn-upgrade"
+                        onclick="openModal('purchaseConfirmationModal', event)"
+                      >
+                        Upgrade Now
+                      </button>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="package-card">
+                      <div class="package-header">
+                        <h3 class="package-name">Premium</h3>
+                        <p class="package-desc">For power users</p>
+                        <div class="package-pricing-info">
+                          <div class="package-price">$599</div>
+                          <p class="package-period">one-time</p>
+                        </div>
+                      </div>
+                      <div class="package-features">
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Binary Volume: $3,000</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Monthly Fee: $79</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Unlimited Team</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>VIP Support</span>
+                        </div>
+                        <div class="feature">
+                          <span class="feature-check">✓</span>
+                          <span>Custom Integrations</span>
+                        </div>
+                      </div>
+                      <button
+                        class="package-button btn-upgrade"
+                        onclick="openModal('purchaseConfirmationModal', event)"
+                      >
+                        Upgrade Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="table-section">
+                  <div class="section-header">
+                    <h2 class="section-title">Recent Orders</h2>
+                  </div>
+                  <div class="table-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Order ID</th>
+                          <th>Package</th>
+                          <th>Price</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>ORD-2025-001</td>
+                          <td>Business</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td>
+                            <span class="status status-completed"
+                              >Completed</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-002</td>
+                          <td>Starter</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td>
+                            <span class="status status-completed"
+                              >Completed</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-003</td>
+                          <td>Starter</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td>
+                            <span class="status status-completed"
+                              >Completed</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-004</td>
+                          <td>Premium</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td>
+                            <span class="status status-cancelled"
+                              >Cancelled</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-005</td>
+                          <td>Premium</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td>
+                            <span class="status status-completed"
+                              >Completed</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-006</td>
+                          <td>Business</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td>
+                            <span class="status status-completed"
+                              >Completed</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-007</td>
+                          <td>Starter</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td>
+                            <span class="status status-completed"
+                              >Completed</span
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Billing History -->
+                <div class="table-section">
+                  <div class="section-header">
+                    <h2 class="section-title">Billing History</h2>
+                  </div>
+                  <div class="table-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Invoice</th>
+                          <th>Description</th>
+                          <th>Amount</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>ORD-2025-001</td>
+                          <td>Business Package - Monthly Fee</td>
+                          <td>$39.00</td>
+                          <td>Jan 15, 2025</td>
+                          <td><span class="status status-paid">Paid</span></td>
+                          <td style="color: #06b6d4; cursor: pointer">
+                            Download
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-002</td>
+                          <td>Starter</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td><span class="status status-paid">Paid</span></td>
+                          <td style="color: #06b6d4; cursor: pointer">
+                            Download
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ORD-2025-003</td>
+                          <td>Starter</td>
+                          <td>$99</td>
+                          <td>Jan 15, 2025</td>
+                          <td><span class="status status-paid">Paid</span></td>
+                          <td style="color: #06b6d4; cursor: pointer">
+                            Download
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== MODALS ===== -->
+
+            <!-- 1. Purchase Confirmation Modal -->
+            <div class="modal" id="purchaseConfirmationModal">
+              <div class="modal-content">
+                <button
+                  class="close-btn"
+                  onclick="closeModal('purchaseConfirmationModal')"
+                >
+                  ✕
+                </button>
+                <div class="modal-header">
+                  <div class="modal-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                  <h2 class="modal-title">Purchase Confirmation</h2>
+                </div>
+
+                <div style="text-align: center; margin-bottom: 25px">
+                  <span class="package-badge" id="confirmPackageName"
+                    >Starter Package</span
+                  >
+                </div>
+
+                <div class="confirmation-box">
+                  <div class="confirmation-row">
+                    <span class="confirmation-label">Package Price:</span>
+                    <span class="confirmation-value" id="confirmPackagePrice"
+                      >500.00 EUR</span
+                    >
+                  </div>
+                  <div class="confirmation-row">
+                    <span class="confirmation-label">Binary Volume:</span>
+                    <span class="confirmation-value">500.00 VP</span>
+                  </div>
+                  <div class="confirmation-row total-row">
+                    <span>Total:</span>
+                    <span id="confirmTotal">500.00 EUR</span>
+                  </div>
+                </div>
+
+                <div class="info-box">
+                  <strong style="color: #06b6d4">ℹ</strong> After the first
+                  month, a monthly subscription of 99.00 EUR will be
+                  automatically set up.
+                </div>
+
+                <div class="modal-buttons column">
+                  <button
+                    class="btn btn-primary"
+                    onclick="
+                      closeModal('purchaseConfirmationModal');
+                      openModal('paymentMethodModal', event);
+                    "
+                  >
+                    Choose Payment Method
+                  </button>
+                  <button
+                    class="btn btn-secondary white"
+                    onclick="closeModal('purchaseConfirmationModal')"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Select Payment Method Modal -->
+            <div class="modal" id="paymentMethodModal">
+              <div class="modal-content">
+                <button
+                  class="close-btn"
+                  onclick="closeModal('paymentMethodModal', event)"
+                >
+                  ✕
+                </button>
+                <div class="modal-header">
+                  <h2 class="modal-title">Select Payment Method</h2>
+                  <p style="color: #a0aec0">
+                    Choose your preferred payment option to continue
+                  </p>
+                </div>
+
+                <div class="method-list">
+                  <!-- Credit Card Method -->
+                  <div
+                    class="method-option selected"
+                    onclick="selectPaymentMethod(this, 'creditCard')"
+                  >
+                    <div class="method-content">
+                      <div class="method-icons">
+                        <i class="fa-solid fa-credit-card"></i>
+                      </div>
+                      <div>
+                        <div class="method-header">
+                          <span class="method-name"
+                            >Credit Card / Bank Transfer</span
+                          >
+                          <span class="method-badge">INSTANT</span>
+                        </div>
+                        <p class="method-desc">
+                          Secure payment processing via Stripe. Supports all
+                          major credit cards, debit cards, and bank transfers
+                          with industry-standard encryption.
+                        </p>
+                        <div class="method-details">
+                          <div class="method-detail">
+                            <span class="detail-icon"
+                              ><i class="fa-solid fa-clock"></i
+                            ></span>
+                            <span>Instant processing</span>
+                          </div>
+                          <div class="method-detail">
+                            <span class="detail-icon">%</span>
+                            <span>2.9% + $0.30 fee</span>
+                          </div>
+                        </div>
+                        <div class="method-supports">
+                          <span style="font-size: 12px; color: #a0aec0"
+                            >Supports:</span
+                          >
+                          <img src="/assets/images/visa.png" />
+                          <img src="/assets/images/mastercard.png" />
+                          <img src="/assets/images/american_express.png" />
+                          <img src="/assets/images/discover.png" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="method-radio">
+                      <div class="method-radio-inner"></div>
+                    </div>
+                  </div>
+
+                  <!-- Cryptocurrency Method -->
+                  <div
+                    class="method-option"
+                    onclick="selectPaymentMethod(this, 'crypto')"
+                  >
+                    <div class="method-content">
+                      <div class="method-icons">
+                        <i class="fa-brands fa-bitcoin"></i>
+                      </div>
+                      <div>
+                        <div class="method-header">
+                          <span class="method-name"
+                            >Cryptocurrency Payment</span
+                          >
+                          <span class="method-badge recommended">LOW FEES</span>
+                        </div>
+                        <div
+                          style="
+                            position: absolute;
+                            top: -10px;
+                            left: 15px;
+                            padding: 6px 12px;
+                            background: rgb(16, 185, 129);
+                            border-radius: 12px;
+                            font-size: 11px;
+                            color: white;
+                            font-weight: 600;
+                          "
+                        >
+                          ★ RECOMMENDED
+                        </div>
+                        <p class="method-desc">
+                          Pay with Bitcoin, Ethereum, USDT, or other supported
+                          cryptocurrencies. Enjoy lower fees and decentralized
+                          transactions with blockchain security.
+                        </p>
+                        <div class="method-details">
+                          <div class="method-detail">
+                            <span class="detail-icon">⏱</span>
+                            <span>5-30 minutes</span>
+                          </div>
+                          <div class="method-detail">
+                            <span class="detail-icon">📡</span>
+                            <span>Network fees only</span>
+                          </div>
+                        </div>
+                        <div class="method-supports">
+                          <span style="font-size: 12px; color: #a0aec0"
+                            >Supports:</span
+                          >
+                          <img src="/assets/images/crypto_1.png" />
+                          <img src="/assets/images/crypto_2.png" />
+                          <img src="/assets/images/crypto_3.png" />
+                          <img src="/assets/images/crypto_4.png" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="method-radio">
+                      <div class="method-radio-inner"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Security Section -->
+                <div class="security-section">
+                  <div class="security-title">
+                    <i class="fa-solid fa-shield-halved"></i> Security & Trust
+                  </div>
+                  <div class="security-items">
+                    <div class="security-item">
+                      <div class="security-icon green">
+                        <i class="fa-solid fa-lock"></i>
+                      </div>
+
+                      <div class="security-label">256-bit SSL Encryption</div>
+                    </div>
+                    <div class="security-item">
+                      <div class="security-icon blue">
+                        <i class="fa-solid fa-user-shield"></i>
+                      </div>
+                      <div class="security-label">PCI DSS Compliant</div>
+                    </div>
+                    <div class="security-item">
+                      <div class="security-icon green">
+                        <i class="fa-solid fa-check-double"></i>
+                      </div>
+                      <div class="security-label">Two-Factor Auth</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-buttons">
+                  <button
+                    class="btn btn-back"
+                    onclick="
+                      openModal('purchaseConfirmationModal', event);
+                      closeModal('paymentMethodModal');
+                    "
+                  >
+                    ← Back
+                  </button>
+                  <button
+                    class="btn btn-secondary"
+                    onclick="closeModal('paymentMethodModal')"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    onclick="
+                      closeModal('paymentMethodModal');
+                      openModal('creditCardPaymentModal', event);
+                    "
+                  >
+                    Continue with Selected
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Credit Card Payment Modal -->
+            <div class="modal" id="creditCardPaymentModal">
+              <div class="modal-content">
+                <button
+                  class="close-btn"
+                  onclick="closeModal('creditCardPaymentModal')"
+                >
+                  ✕
+                </button>
+                <div class="modal-header">
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      justify-content: center;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background: #5b66e8;
+                        border-radius: 6px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 20px;
+                      "
+                    >
+                      <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <h2 class="modal-title">Credit Card Payment</h2>
+                  </div>
+                </div>
+
+                <div class="amount-box">
+                  <div class="amount-label">Amount to pay</div>
+                  <div class="amount-value" id="ccAmount">€3,000.00</div>
+                </div>
+
+                <div class="payment-description">
+                  Complete your payment securely
+                </div>
+
+                <button
+                  class="payment-button"
+                  onclick="alert('Redirecting to Stripe payment page...')"
+                >
+                  📤 Click Here to Open Payment Page
+                </button>
+
+                <div class="next-steps">
+                  <div class="next-steps-title">📋 Next Steps</div>
+                  <div class="next-steps-list">
+                    <div class="next-step-item">
+                      <span class="step-dot"></span>
+                      <span>Complete payment on Stripe checkout page</span>
+                    </div>
+                    <div class="next-step-item">
+                      <span class="step-dot"></span>
+                      <span>Return after successful payment</span>
+                    </div>
+                    <div class="next-step-item">
+                      <span class="step-dot"></span>
+                      <span>Package activates automatically</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-buttons">
+                  <button
+                    class="btn btn-back"
+                    onclick="
+                      openModal('paymentMethodModal', event);
+                      closeModal('creditCardPaymentModal');
+                    "
+                  >
+                    ← Back
+                  </button>
+                  <button
+                    class="btn btn-cancel"
+                    onclick="closeModal('creditCardPaymentModal')"
+                  >
+                    ✕ Cancel
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    onclick="alert('Redirecting to Stripe...')"
+                  >
+                    Continue with Crypto
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Crypto Payment Modal -->
+            <div class="modal" id="cryptoPaymentModal">
+              <div class="modal-content">
+                <button
+                  class="close-btn"
+                  onclick="closeModal('cryptoPaymentModal')"
+                >
+                  ✕
+                </button>
+                <div class="modal-header">
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      justify-content: center;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background: #f7931a;
+                        border-radius: 6px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 20px;
+                      "
+                    >
+                      ₿
+                    </div>
+                    <h2 class="modal-title">Cryptocurrency Payment</h2>
+                  </div>
+                </div>
+
+                <div class="amount-box">
+                  <div class="amount-label">Amount to pay</div>
+                  <div class="amount-value">0.075 BTC</div>
+                </div>
+
+                <div class="payment-description">
+                  Send crypto to the wallet address below
+                </div>
+
                 <div
                   style="
-                    position: absolute;
-                    top: -10px;
-                    left: 15px;
-                    padding: 6px 12px;
-                    background: rgb(16, 185, 129);
-                    border-radius: 12px;
-                    font-size: 11px;
-                    color: white;
-                    font-weight: 600;
+                    background: rgba(30, 41, 59, 0.6);
+                    border: 1px solid rgba(148, 163, 184, 0.15);
+                    border-radius: 8px;
+                    padding: 20px;
+                    margin-bottom: 25px;
                   "
                 >
-                  ★ RECOMMENDED
-                </div>
-                <p class="method-desc">
-                  Pay with Bitcoin, Ethereum, USDT, or other supported
-                  cryptocurrencies. Enjoy lower fees and decentralized
-                  transactions with blockchain security.
-                </p>
-                <div class="method-details">
-                  <div class="method-detail">
-                    <span class="detail-icon">⏱</span>
-                    <span>5-30 minutes</span>
+                  <div
+                    style="font-size: 12px; color: #a0aec0; margin-bottom: 10px"
+                  >
+                    WALLET ADDRESS
                   </div>
-                  <div class="method-detail">
-                    <span class="detail-icon">📡</span>
-                    <span>Network fees only</span>
+                  <div
+                    style="
+                      word-break: break-all;
+                      font-family: monospace;
+                      font-size: 13px;
+                      color: #cbd5e1;
+                      background: rgba(15, 23, 42, 0.5);
+                      padding: 12px;
+                      border-radius: 6px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    1A1z7agoat2LWRLWCGHNR11agGFMwqKc7
+                  </div>
+                  <button
+                    style="
+                      width: 100%;
+                      padding: 8px;
+                      background: rgba(6, 182, 212, 0.2);
+                      border: 1px solid #06b6d4;
+                      color: #06b6d4;
+                      border-radius: 6px;
+                      cursor: pointer;
+                      font-size: 13px;
+                      font-weight: 600;
+                    "
+                  >
+                    📋 Copy Address
+                  </button>
+                </div>
+
+                <div class="next-steps">
+                  <div class="next-steps-title">📋 Next Steps</div>
+                  <div class="next-steps-list">
+                    <div class="next-step-item">
+                      <span class="step-dot"></span>
+                      <span>Copy the wallet address above</span>
+                    </div>
+                    <div class="next-step-item">
+                      <span class="step-dot"></span>
+                      <span>Send exact amount from your wallet</span>
+                    </div>
+                    <div class="next-step-item">
+                      <span class="step-dot"></span>
+                      <span>Wait for blockchain confirmation</span>
+                    </div>
+                    <div class="next-step-item">
+                      <span class="step-dot"></span>
+                      <span>Package activates automatically</span>
+                    </div>
                   </div>
                 </div>
-                <div class="method-supports">
-                  <span style="font-size: 12px; color: #a0aec0">Supports:</span>
-                  <img src="/assets/images/crypto_1.png" />
-                  <img src="/assets/images/crypto_2.png" />
-                  <img src="/assets/images/crypto_3.png" />
-                  <img src="/assets/images/crypto_4.png" />
+
+                <div class="modal-buttons">
+                  <button
+                    class="btn btn-back"
+                    onclick="
+                      openModal('paymentMethodModal', value);
+                      closeModal('cryptoPaymentModal');
+                    "
+                  >
+                    ← Back
+                  </button>
+                  <button
+                    class="btn btn-cancel"
+                    onclick="closeModal('cryptoPaymentModal')"
+                  >
+                    ✕ Cancel
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    onclick="alert('Waiting for payment confirmation...')"
+                  >
+                    I Sent the Crypto
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="method-radio">
-              <div class="method-radio-inner"></div>
-            </div>
+
+            <!-- <script src="./assets/js/subscription.js"></script> -->
           </div>
         </div>
-
-        <!-- Security Section -->
-        <div class="security-section">
-          <div class="security-title">
-            <i class="fa-solid fa-shield-halved"></i> Security & Trust
-          </div>
-          <div class="security-items">
-            <div class="security-item">
-              <div class="security-icon green">
-                <i class="fa-solid fa-lock"></i>
-              </div>
-
-              <div class="security-label">256-bit SSL Encryption</div>
-            </div>
-            <div class="security-item">
-              <div class="security-icon blue">
-                <i class="fa-solid fa-user-shield"></i>
-              </div>
-              <div class="security-label">PCI DSS Compliant</div>
-            </div>
-            <div class="security-item">
-              <div class="security-icon green">
-                <i class="fa-solid fa-check-double"></i>
-              </div>
-              <div class="security-label">Two-Factor Auth</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-buttons">
-          <button
-            class="btn btn-back"
-            onclick="
-              openModal('purchaseConfirmationModal', event);
-              closeModal('paymentMethodModal');
-            "
-          >
-            ← Back
-          </button>
-          <button
-            class="btn btn-secondary"
-            onclick="closeModal('paymentMethodModal')"
-          >
-            Cancel
-          </button>
-          <button
-            class="btn btn-primary"
-            onclick="
-              closeModal('paymentMethodModal');
-              openModal('creditCardPaymentModal', event);
-            "
-          >
-            Continue with Selected
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3. Credit Card Payment Modal -->
-    <div class="modal" id="creditCardPaymentModal">
-      <div class="modal-content">
-        <button
-          class="close-btn"
-          onclick="closeModal('creditCardPaymentModal')"
-        >
-          ✕
-        </button>
-        <div class="modal-header">
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              justify-content: center;
-            "
-          >
-            <div
-              style="
-                width: 40px;
-                height: 40px;
-                background: #5b66e8;
-                border-radius: 6px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-              "
-            >
-              <i class="fa-regular fa-credit-card"></i>
-            </div>
-            <h2 class="modal-title">Credit Card Payment</h2>
-          </div>
-        </div>
-
-        <div class="amount-box">
-          <div class="amount-label">Amount to pay</div>
-          <div class="amount-value" id="ccAmount">€3,000.00</div>
-        </div>
-
-        <div class="payment-description">Complete your payment securely</div>
-
-        <button
-          class="payment-button"
-          onclick="alert('Redirecting to Stripe payment page...')"
-        >
-          📤 Click Here to Open Payment Page
-        </button>
-
-        <div class="next-steps">
-          <div class="next-steps-title">📋 Next Steps</div>
-          <div class="next-steps-list">
-            <div class="next-step-item">
-              <span class="step-dot"></span>
-              <span>Complete payment on Stripe checkout page</span>
-            </div>
-            <div class="next-step-item">
-              <span class="step-dot"></span>
-              <span>Return after successful payment</span>
-            </div>
-            <div class="next-step-item">
-              <span class="step-dot"></span>
-              <span>Package activates automatically</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-buttons">
-          <button
-            class="btn btn-back"
-            onclick="
-              openModal('paymentMethodModal', event);
-              closeModal('creditCardPaymentModal');
-            "
-          >
-            ← Back
-          </button>
-          <button
-            class="btn btn-cancel"
-            onclick="closeModal('creditCardPaymentModal')"
-          >
-            ✕ Cancel
-          </button>
-          <button
-            class="btn btn-primary"
-            onclick="alert('Redirecting to Stripe...')"
-          >
-            Continue with Crypto
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4. Crypto Payment Modal -->
-    <div class="modal" id="cryptoPaymentModal">
-      <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('cryptoPaymentModal')">
-          ✕
-        </button>
-        <div class="modal-header">
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              justify-content: center;
-            "
-          >
-            <div
-              style="
-                width: 40px;
-                height: 40px;
-                background: #f7931a;
-                border-radius: 6px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-              "
-            >
-              ₿
-            </div>
-            <h2 class="modal-title">Cryptocurrency Payment</h2>
-          </div>
-        </div>
-
-        <div class="amount-box">
-          <div class="amount-label">Amount to pay</div>
-          <div class="amount-value">0.075 BTC</div>
-        </div>
-
-        <div class="payment-description">
-          Send crypto to the wallet address below
-        </div>
-
-        <div
-          style="
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(148, 163, 184, 0.15);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px;
-          "
-        >
-          <div style="font-size: 12px; color: #a0aec0; margin-bottom: 10px">
-            WALLET ADDRESS
-          </div>
-          <div
-            style="
-              word-break: break-all;
-              font-family: monospace;
-              font-size: 13px;
-              color: #cbd5e1;
-              background: rgba(15, 23, 42, 0.5);
-              padding: 12px;
-              border-radius: 6px;
-              margin-bottom: 12px;
-            "
-          >
-            1A1z7agoat2LWRLWCGHNR11agGFMwqKc7
-          </div>
-          <button
-            style="
-              width: 100%;
-              padding: 8px;
-              background: rgba(6, 182, 212, 0.2);
-              border: 1px solid #06b6d4;
-              color: #06b6d4;
-              border-radius: 6px;
-              cursor: pointer;
-              font-size: 13px;
-              font-weight: 600;
-            "
-          >
-            📋 Copy Address
-          </button>
-        </div>
-
-        <div class="next-steps">
-          <div class="next-steps-title">📋 Next Steps</div>
-          <div class="next-steps-list">
-            <div class="next-step-item">
-              <span class="step-dot"></span>
-              <span>Copy the wallet address above</span>
-            </div>
-            <div class="next-step-item">
-              <span class="step-dot"></span>
-              <span>Send exact amount from your wallet</span>
-            </div>
-            <div class="next-step-item">
-              <span class="step-dot"></span>
-              <span>Wait for blockchain confirmation</span>
-            </div>
-            <div class="next-step-item">
-              <span class="step-dot"></span>
-              <span>Package activates automatically</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-buttons">
-          <button
-            class="btn btn-back"
-            onclick="
-              openModal('paymentMethodModal', value);
-              closeModal('cryptoPaymentModal');
-            "
-          >
-            ← Back
-          </button>
-          <button
-            class="btn btn-cancel"
-            onclick="closeModal('cryptoPaymentModal')"
-          >
-            ✕ Cancel
-          </button>
-          <button
-            class="btn btn-primary"
-            onclick="alert('Waiting for payment confirmation...')"
-          >
-            I Sent the Crypto
-          </button>
-        </div>
-      </div>
+      </main>
     </div>
 
     <script>
@@ -866,6 +1418,11 @@
         }
       };
     </script>
-    <!-- <script src="./assets/js/subscription.js"></script> -->
+    <script src="assets/js/app.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
   </body>
 </html>
