@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/subscription.css" />
     <link rel="stylesheet" href="assets/css/agent-leads.css" />
+    <link rel="stylesheet" href="assets/css/profile.css" />
+    <link rel="stylesheet" href="assets/css/support.css" />
   </head>
   <body>
     <!-- Heading section -->
@@ -377,7 +379,103 @@
     <div id="agent-form" class="modal">
       <div class="modal-content">
         <div class="close-btn" onclick="closeModal('agent-form')">X</div>
-        <div>h1lsadkfjlk</div>
+        <!-- Form -->
+        <form>
+          <!-- Basic Information -->
+          <div class="form-section support-form">
+            <h3 class="form-title">Add New Lead</h3>
+
+            <div class="form-group">
+              <label for="fullName">Full name</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="text"
+                id="email"
+                placeholder="info@gmail.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phobe</label>
+              <input
+                type="text"
+                id="phone"
+                placeholder="+1234567890"
+                required
+              />
+            </div>
+            <div class="form-row full">
+              <div class="form-group">
+                <label for="priority">Priority level</label>
+                <select id="priority" required>
+                  <option value="">Select priority level</option>
+                  <option value="pending" selected>Pending</option>
+                  <option value="high">High priority</option>
+                  <option value="finance">Finance department</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" required>
+                  <option value="">Select priority level</option>
+                  <option value="new" selected>New</option>
+                  <option value="contacted">Contacted</option>
+                  <option value="qualified">Qualified</option>
+                  <option value="coverted">Coverted</option>
+                  <option value="lost">Lost</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="source">Source</label>
+                <input
+                  type="text"
+                  id="source"
+                  placeholder="e.g. Facebook, Google Ads"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea
+                id="description"
+                type="text"
+                id="message"
+                placeholder="Personal message..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <div
+              style="
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+                gap: 16px;
+              "
+            >
+              <button
+                onclick="closeModal('support')"
+                class="btn-outline"
+                style="width: 100%"
+              >
+                Cancel
+              </button>
+              <button class="btn" style="width: 100%">Save Lead</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </body>
