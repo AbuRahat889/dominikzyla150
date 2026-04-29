@@ -2,50 +2,50 @@
 // COMPONENT LOADER
 //////////////////////////////
 
-function loadComponent(id, file) {
-  fetch(file)
-    .then((res) => {
-      if (!res.ok) throw new Error(`Failed to load ${file}`);
-      return res.text();
-    })
-    .then((data) => {
-      document.getElementById(id).innerHTML = data;
-    })
-    .catch((err) => {
-      console.error("Component load error:", err);
-    });
-}
+// function loadComponent(id, file) {
+//   fetch(file)
+//     .then((res) => {
+//       if (!res.ok) throw new Error(`Failed to load ${file}`);
+//       return res.text();
+//     })
+//     .then((data) => {
+//       document.getElementById(id).innerHTML = data;
+//     })
+//     .catch((err) => {
+//       console.error("Component load error:", err);
+//     });
+// }
 
-// Load layout components
-loadComponent("sidebar", "components/sidebar.html");
-loadComponent("topbar", "components/topbar.html");
+// // Load layout components
+// loadComponent("sidebar", "components/sidebar.html");
+// loadComponent("topbar", "components/topbar.html");
 
-//////////////////////////////
-// SPA PAGE ROUTER
-//////////////////////////////
+// //////////////////////////////
+// // SPA PAGE ROUTER
+// //////////////////////////////
 
-function loadPage(page) {
-  fetch(`${page}.html`)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(`Page not found: ${page}.html`);
-      }
-      return res.text();
-    })
-    .then((html) => {
-      document.querySelector(".content").innerHTML = html;
-    })
-    .catch((err) => {
-      console.error("Routing error:", err);
-      document.querySelector(".content").innerHTML =
-        "<h2 style='color:red'>Page not found</h2>";
-    });
-}
+// function loadPage(page) {
+//   fetch(`${page}.html`)
+//     .then((res) => {
+//       if (!res.ok) {
+//         throw new Error(`Page not found: ${page}.html`);
+//       }
+//       return res.text();
+//     })
+//     .then((html) => {
+//       document.querySelector(".content").innerHTML = html;
+//     })
+//     .catch((err) => {
+//       console.error("Routing error:", err);
+//       document.querySelector(".content").innerHTML =
+//         "<h2 style='color:red'>Page not found</h2>";
+//     });
+// }
 
-// default page load
-document.addEventListener("DOMContentLoaded", () => {
-  loadPage("agent-leads");
-});
+// // default page load
+// document.addEventListener("DOMContentLoaded", () => {
+//   loadPage("agent-leads");
+// });
 
 //////////////////////////////
 // SIDEBAR ACTIVE STATE
