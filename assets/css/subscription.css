@@ -361,10 +361,6 @@ tbody tr:hover {
 
 /* ===== MODAL STYLES ===== */
 
-.modal-close:hover {
-  color: #ffffff;
-}
-
 /* Purchase Confirmation Modal */
 .modal-header {
   text-align: center;
@@ -641,10 +637,28 @@ tbody tr:hover {
 }
 
 .security-icon {
-  font-size: 28px;
+  font-size: 20px;
   margin-bottom: 10px;
-  color: #06b6d4;
+  display: inline-flex;
+  /* key change */
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  /* gives space around icon */
+  border-radius: 8px;
+  /* optional: makes it circular */
 }
+
+.security-icon.green {
+  color: #34D399;
+  background-color: #34D3991A;
+}
+
+.security-icon.blue {
+  color: #60A5FA;
+  background-color: #60A5FA1A;
+}
+
 
 .security-label {
   font-size: 12px;
@@ -814,19 +828,10 @@ tbody tr:hover {
   border: 1px solid rgba(148, 163, 184, 0.2);
 }
 
-.btn-back:hover {
-  background: rgba(148, 163, 184, 0.15);
-}
-
 .btn-cancel {
   background: none;
   border: 1px solid rgba(148, 163, 184, 0.2);
   color: #cbd5e1;
-}
-
-.btn-cancel:hover {
-  border-color: rgba(148, 163, 184, 0.4);
-  background: rgba(148, 163, 184, 0.05);
 }
 
 /* Responsive */

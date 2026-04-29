@@ -449,7 +449,10 @@
     <!-- 2. Select Payment Method Modal -->
     <div class="modal" id="paymentMethodModal">
       <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('paymentMethodModal', event)">
+        <button
+          class="close-btn"
+          onclick="closeModal('paymentMethodModal', event)"
+        >
           ✕
         </button>
         <div class="modal-header">
@@ -566,18 +569,27 @@
 
         <!-- Security Section -->
         <div class="security-section">
-          <div class="security-title">🔒 Security & Trust</div>
+          <div class="security-title">
+            <i class="fa-solid fa-shield-halved"></i> Security & Trust
+          </div>
           <div class="security-items">
             <div class="security-item">
-              <div class="security-icon">🔐</div>
+              <div class="security-icon green">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+
               <div class="security-label">256-bit SSL Encryption</div>
             </div>
             <div class="security-item">
-              <div class="security-icon">✓</div>
+              <div class="security-icon blue">
+                <i class="fa-solid fa-user-shield"></i>
+              </div>
               <div class="security-label">PCI DSS Compliant</div>
             </div>
             <div class="security-item">
-              <div class="security-icon">🛡️</div>
+              <div class="security-icon green">
+                <i class="fa-solid fa-check-double"></i>
+              </div>
               <div class="security-label">Two-Factor Auth</div>
             </div>
           </div>
@@ -586,13 +598,16 @@
         <div class="modal-buttons">
           <button
             class="btn btn-back"
-            onclick="openModal('purchaseConfirmationModal', event)"
+            onclick="
+              openModal('purchaseConfirmationModal', event);
+              closeModal('paymentMethodModal');
+            "
           >
             ← Back
           </button>
           <button
             class="btn btn-secondary"
-            onclick="closeModal('paymentMethod')"
+            onclick="closeModal('paymentMethodModal')"
           >
             Cancel
           </button>
@@ -612,7 +627,10 @@
     <!-- 3. Credit Card Payment Modal -->
     <div class="modal" id="creditCardPaymentModal">
       <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('creditCardPayment')">
+        <button
+          class="close-btn"
+          onclick="closeModal('creditCardPaymentModal')"
+        >
           ✕
         </button>
         <div class="modal-header">
@@ -636,7 +654,7 @@
                 font-size: 20px;
               "
             >
-              💳
+              <i class="fa-regular fa-credit-card"></i>
             </div>
             <h2 class="modal-title">Credit Card Payment</h2>
           </div>
@@ -675,7 +693,13 @@
         </div>
 
         <div class="modal-buttons">
-          <button class="btn btn-back" onclick="openModal('paymentMethod')">
+          <button
+            class="btn btn-back"
+            onclick="
+              openModal('paymentMethodModal', event);
+              closeModal('creditCardPaymentModal');
+            "
+          >
             ← Back
           </button>
           <button
@@ -802,10 +826,19 @@
         </div>
 
         <div class="modal-buttons">
-          <button class="btn btn-back" onclick="openModal('paymentMethodModal', value)">
+          <button
+            class="btn btn-back"
+            onclick="
+              openModal('paymentMethodModal', value);
+              closeModal('cryptoPaymentModal');
+            "
+          >
             ← Back
           </button>
-          <button class="btn btn-cancel" onclick="closeModal('cryptoPayment')">
+          <button
+            class="btn btn-cancel"
+            onclick="closeModal('cryptoPaymentModal')"
+          >
             ✕ Cancel
           </button>
           <button
