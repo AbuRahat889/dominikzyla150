@@ -44,7 +44,7 @@ function loadPage(page) {
 
 // default page load
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("support");
+  loadPage("dashboard");
 });
 
 //////////////////////////////
@@ -118,7 +118,7 @@ function closeModal(id) {
     modal.classList.remove("show");
     document.body.style.overflow = "auto";
   }
-}
+} 
 
 // Close on outside click
 document.addEventListener("click", function (event) {

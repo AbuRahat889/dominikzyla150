@@ -6,6 +6,13 @@
 .agents-tabel-header {
   padding: 15px 15px 10px 15px;
   border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agents-tabel-icon {
+  cursor: pointer;
 }
 
 .bottom-card-gird {
