@@ -6,168 +6,163 @@
     <title>Document</title>
   </head>
   <body>
-    <nav class="topbar">
-      <div class="topbar-left">
-        <span class="welcome-text">Welcome Back! 👋</span>
-      </div>
-
-      <div class="topbar-right">
-        <div class="language-selector">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-              stroke="#B5BDC9"
-              stroke-width="1.5"
-            />
-            <path
-              d="M2 12.9506C8.14512 13.5607 13.5577 8.11477 12.9506 2"
-              stroke="#B5BDC9"
-              stroke-width="1.5"
-            />
-            <path
-              d="M11.0507 22.0012C10.4406 15.856 15.8866 10.4434 22.0013 11.0505"
-              stroke="#B5BDC9"
-              stroke-width="1.5"
-            />
-            <path
-              d="M17 20C17 12.8203 11.1797 7 4 7"
-              stroke="#B5BDC9"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-          </svg>
-          <select name="" id="" class="language-dropdown">
-            <option value="en" class="">EN</option>
-            <option value="es">ES</option>
-            <option value="fr">FR</option>
-          </select>
+    <div id="topbar">
+      <nav class="topbar">
+        <div class="topbar-left">
+          <span class="welcome-text">Welcome Back! 👋</span>
         </div>
 
-        <div class="user-menu">
-          <div
-            class="user-menu-toggle"
-            onclick="toggleUserMenu('userDropdown')"
-          >
-            <div class="user-avatar">AK</div>
-            <span>Alesia K.</span>
+        <div class="topbar-right">
+          <div class="language-selector">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                stroke="#B5BDC9"
+                stroke-width="1.5"
+              />
+              <path
+                d="M2 12.9506C8.14512 13.5607 13.5577 8.11477 12.9506 2"
+                stroke="#B5BDC9"
+                stroke-width="1.5"
+              />
+              <path
+                d="M11.0507 22.0012C10.4406 15.856 15.8866 10.4434 22.0013 11.0505"
+                stroke="#B5BDC9"
+                stroke-width="1.5"
+              />
+              <path
+                d="M17 20C17 12.8203 11.1797 7 4 7"
+                stroke="#B5BDC9"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <select name="" id="" class="language-dropdown">
+              <option value="en" class="">EN</option>
+              <option value="es">ES</option>
+              <option value="fr">FR</option>
+            </select>
           </div>
 
-          <div class="user-dropdown" id="userDropdown">
-            <div class="user-dropdown-header">Alesia Karapova</div>
+          <div class="user-menu">
             <div
-              data-page="profile"
-              onclick="
-                loadPage('profile');
-                setActive('profile');
-              "
-              class="user-dropdown-item active"
+              class="user-menu-toggle"
+              onclick="toggleUserMenu('userDropdown')"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M18.5 20V17.9704C18.5 16.7281 17.9407 15.5099 16.8103 14.9946C15.4315 14.3661 13.7779 14 12 14C10.2221 14 8.5685 14.3661 7.18968 14.9946C6.05927 15.5099 5.5 16.7281 5.5 17.9704V20"
-                  stroke="#B5BDC9"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12 11C13.933 11 15.5 9.433 15.5 7.5C15.5 5.567 13.933 4 12 4C10.067 4 8.5 5.567 8.5 7.5C8.5 9.433 10.067 11 12 11Z"
-                  stroke="#B5BDC9"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Profile
+              <div class="user-avatar">AK</div>
+              <span>Alesia K.</span>
             </div>
 
-            <div
-              class="user-dropdown-item"
-              onclick="openModal('logout', event)"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
+            <div class="user-dropdown" id="userDropdown">
+              <div class="user-dropdown-header">Alesia Karapova</div>
+              <a href="/profile.html" class="user-dropdown-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M18.5 20V17.9704C18.5 16.7281 17.9407 15.5099 16.8103 14.9946C15.4315 14.3661 13.7779 14 12 14C10.2221 14 8.5685 14.3661 7.18968 14.9946C6.05927 15.5099 5.5 16.7281 5.5 17.9704V20"
+                    stroke="#B5BDC9"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 11C13.933 11 15.5 9.433 15.5 7.5C15.5 5.567 13.933 4 12 4C10.067 4 8.5 5.567 8.5 7.5C8.5 9.433 10.067 11 12 11Z"
+                    stroke="#B5BDC9"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Profile
+              </a>
+
+              <div
+                class="user-dropdown-item"
+                onclick="openModal('logout', event)"
               >
-                <path
-                  d="M8.33333 6.66666V4.99999C8.33333 4.55797 8.50893 4.13404 8.82149 3.82148C9.13405 3.50892 9.55797 3.33333 10 3.33333H15.8333C16.2754 3.33333 16.6993 3.50892 17.0118 3.82148C17.3244 4.13404 17.5 4.55797 17.5 4.99999V15C17.5 15.442 17.3244 15.8659 17.0118 16.1785C16.6993 16.4911 16.2754 16.6667 15.8333 16.6667H10C9.55797 16.6667 9.13405 16.4911 8.82149 16.1785C8.50893 15.8659 8.33333 15.442 8.33333 15V13.3333"
-                  stroke="#A0AEC0"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14.1667 10H2.50008M2.50008 10L5.00008 7.5M2.50008 10L5.00008 12.5"
-                  stroke="#A0AEC0"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Logout
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M8.33333 6.66666V4.99999C8.33333 4.55797 8.50893 4.13404 8.82149 3.82148C9.13405 3.50892 9.55797 3.33333 10 3.33333H15.8333C16.2754 3.33333 16.6993 3.50892 17.0118 3.82148C17.3244 4.13404 17.5 4.55797 17.5 4.99999V15C17.5 15.442 17.3244 15.8659 17.0118 16.1785C16.6993 16.4911 16.2754 16.6667 15.8333 16.6667H10C9.55797 16.6667 9.13405 16.4911 8.82149 16.1785C8.50893 15.8659 8.33333 15.442 8.33333 15V13.3333"
+                    stroke="#A0AEC0"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14.1667 10H2.50008M2.50008 10L5.00008 7.5M2.50008 10L5.00008 12.5"
+                    stroke="#A0AEC0"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Logout
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <!-- Modal 1 -->
-    <div id="logout" class="modal">
-      <div class="modal-content">
-        <div class="close-btn" onclick="closeModal('logout')">X</div>
-        <div class="logout-modal">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="89"
-            height="89"
-            viewBox="0 0 89 89"
-            fill="none"
-          >
-            <path
-              d="M43.2618 53.7368C43.2535 53.7368 43.2453 53.7368 43.237 53.7368C41.7121 53.7229 40.4855 52.4757 40.4993 50.9494L40.5118 49.5682C40.5118 49.4894 40.5159 49.4093 40.5242 49.3306C40.9068 45.3125 43.574 42.8498 45.7191 40.8704C46.4456 40.1991 47.1335 39.5651 47.7191 38.9035C48.4332 38.0983 49.4692 36.449 48.3794 34.4587C47.1238 32.1603 44.0574 31.5097 41.6748 32.0553C39.1858 32.6244 38.2686 34.7501 37.9426 35.9656C37.5476 37.4394 36.0324 38.3137 34.5586 37.9201C33.0848 37.525 32.2104 36.0098 32.6041 34.536C33.705 30.424 36.5614 27.5579 40.4399 26.6698C45.6597 25.4778 50.9167 27.5869 53.2248 31.8067C55.1461 35.3206 54.6199 39.4436 51.8505 42.568C51.0811 43.4354 50.2593 44.1951 49.4637 44.9285C47.4816 46.7587 46.2426 47.9825 46.0326 49.7491L46.0216 50.9964C46.0105 52.5171 44.7757 53.7368 43.2618 53.7368Z"
-              fill="#1EFFC7"
-            />
-            <path
-              d="M43.2613 62.0174C42.543 62.0174 41.8248 61.7274 41.3137 61.2163C40.7888 60.7052 40.4988 59.987 40.4988 59.2549C40.4988 58.5367 40.7888 57.8184 41.3137 57.3074C42.3358 56.2852 44.1867 56.2852 45.2088 57.3074C45.7337 57.8184 46.0238 58.5367 46.0238 59.2549C46.0238 59.987 45.7337 60.6914 45.2227 61.2163C44.6978 61.7274 43.9933 62.0174 43.2613 62.0174Z"
-              fill="#1EFFC7"
-            />
-            <path
-              d="M44.0939 80.1083C40.9516 80.1083 37.8368 79.6994 34.8354 78.8914C21.9014 75.412 11.774 64.6977 9.03502 51.5938C6.24351 38.244 11.3956 24.2105 22.1624 15.8415C28.3863 11.003 36.236 8.33716 44.2666 8.33716C49.8261 8.33716 55.347 9.63001 60.2338 12.0734C72.3018 18.1109 80.099 30.7245 80.099 44.2096C80.099 55.2126 74.9068 65.8179 66.2105 72.5777C59.9645 77.4342 52.1093 80.1083 44.0939 80.1083ZM44.2679 13.8622C37.4598 13.8622 30.8132 16.1136 25.5548 20.2035C16.4427 27.2865 12.0807 39.1639 14.444 50.4625C16.7617 61.5471 25.3296 70.6122 36.2719 73.5556C38.8051 74.2366 41.4378 74.5833 44.0939 74.5833H44.0953C50.8883 74.5833 57.5376 72.3222 62.8209 68.2157C70.1816 62.4946 74.5753 53.5206 74.5753 44.2096C74.5753 32.7991 67.9771 22.1248 57.7641 17.0156C53.6397 14.9533 48.9739 13.8622 44.2679 13.8622Z"
-              fill="#1EFFC7"
-            />
-          </svg>
-          <div>
-            <p class="logout-title">Are You Sure?</p>
-            <p class="logout-description">Do you want to log out ?</p>
-          </div>
-          <div style="display: flex; gap: 24px; margin-top: 20px">
-            <button
-              class="btn"
-              onclick="
-                closeModal('logout');
-                alert('Logged out!');
-              "
+      <!-- Modal 1 -->
+      <div id="logout" class="modal">
+        <div class="modal-content">
+          <div class="close-btn" onclick="closeModal('logout')">X</div>
+          <div class="logout-modal">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="89"
+              height="89"
+              viewBox="0 0 89 89"
+              fill="none"
             >
-              Logout
-            </button>
-            <button class="btn-outline" onclick="closeModal('logout')">
-              Cancel
-            </button>
+              <path
+                d="M43.2618 53.7368C43.2535 53.7368 43.2453 53.7368 43.237 53.7368C41.7121 53.7229 40.4855 52.4757 40.4993 50.9494L40.5118 49.5682C40.5118 49.4894 40.5159 49.4093 40.5242 49.3306C40.9068 45.3125 43.574 42.8498 45.7191 40.8704C46.4456 40.1991 47.1335 39.5651 47.7191 38.9035C48.4332 38.0983 49.4692 36.449 48.3794 34.4587C47.1238 32.1603 44.0574 31.5097 41.6748 32.0553C39.1858 32.6244 38.2686 34.7501 37.9426 35.9656C37.5476 37.4394 36.0324 38.3137 34.5586 37.9201C33.0848 37.525 32.2104 36.0098 32.6041 34.536C33.705 30.424 36.5614 27.5579 40.4399 26.6698C45.6597 25.4778 50.9167 27.5869 53.2248 31.8067C55.1461 35.3206 54.6199 39.4436 51.8505 42.568C51.0811 43.4354 50.2593 44.1951 49.4637 44.9285C47.4816 46.7587 46.2426 47.9825 46.0326 49.7491L46.0216 50.9964C46.0105 52.5171 44.7757 53.7368 43.2618 53.7368Z"
+                fill="#1EFFC7"
+              />
+              <path
+                d="M43.2613 62.0174C42.543 62.0174 41.8248 61.7274 41.3137 61.2163C40.7888 60.7052 40.4988 59.987 40.4988 59.2549C40.4988 58.5367 40.7888 57.8184 41.3137 57.3074C42.3358 56.2852 44.1867 56.2852 45.2088 57.3074C45.7337 57.8184 46.0238 58.5367 46.0238 59.2549C46.0238 59.987 45.7337 60.6914 45.2227 61.2163C44.6978 61.7274 43.9933 62.0174 43.2613 62.0174Z"
+                fill="#1EFFC7"
+              />
+              <path
+                d="M44.0939 80.1083C40.9516 80.1083 37.8368 79.6994 34.8354 78.8914C21.9014 75.412 11.774 64.6977 9.03502 51.5938C6.24351 38.244 11.3956 24.2105 22.1624 15.8415C28.3863 11.003 36.236 8.33716 44.2666 8.33716C49.8261 8.33716 55.347 9.63001 60.2338 12.0734C72.3018 18.1109 80.099 30.7245 80.099 44.2096C80.099 55.2126 74.9068 65.8179 66.2105 72.5777C59.9645 77.4342 52.1093 80.1083 44.0939 80.1083ZM44.2679 13.8622C37.4598 13.8622 30.8132 16.1136 25.5548 20.2035C16.4427 27.2865 12.0807 39.1639 14.444 50.4625C16.7617 61.5471 25.3296 70.6122 36.2719 73.5556C38.8051 74.2366 41.4378 74.5833 44.0939 74.5833H44.0953C50.8883 74.5833 57.5376 72.3222 62.8209 68.2157C70.1816 62.4946 74.5753 53.5206 74.5753 44.2096C74.5753 32.7991 67.9771 22.1248 57.7641 17.0156C53.6397 14.9533 48.9739 13.8622 44.2679 13.8622Z"
+                fill="#1EFFC7"
+              />
+            </svg>
+            <div>
+              <p class="logout-title">Are You Sure?</p>
+              <p class="logout-description">Do you want to log out ?</p>
+            </div>
+            <div style="display: flex; gap: 24px; margin-top: 20px">
+              <button
+                class="btn"
+                onclick="
+                  closeModal('logout');
+                  alert('Logged out!');
+                "
+              >
+                Logout
+              </button>
+              <button class="btn-outline" onclick="closeModal('logout')">
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       </div>
