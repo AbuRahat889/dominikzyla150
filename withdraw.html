@@ -16,6 +16,450 @@
     <link rel="stylesheet" href="assets/css/sidebar.css" />
     <link rel="stylesheet" href="assets/css/topbar.css" />
     <link rel="stylesheet" href="./assets/css/withdraw.css" />
+    <style>
+      :root {
+        --bg: #060d21;
+        --bg2: #0a1530;
+        --card: rgba(20, 40, 80, 0.5);
+        --border: rgba(0, 150, 200, 0.2);
+        --brand: #1effc7;
+        --brand-dim: rgba(30, 255, 199, 0.15);
+        --brand-glow: rgba(30, 255, 199, 0.3);
+        --text: #ffffff;
+        --text-muted: #8b9cb8;
+        --text-dim: #5a6e8f;
+        --danger: #ff4757;
+      }
+
+      /* ── WITHDRAWAL PAGE ── */
+      .withdrawal-header {
+        margin-bottom: 20px;
+      }
+
+      /* ══════════════════════════════════
+       MODALS — shared overlay
+    ══════════════════════════════════ */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(6, 13, 33, 0.85);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .modal-box {
+        background: #020817;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px;
+        transform: translateY(12px);
+        transition: transform 0.25s;
+        position: relative;
+      }
+      .modal-overlay.open .modal-box {
+        transform: translateY(0);
+      }
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-size: 18px;
+        cursor: pointer;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        transition: all 0.2s;
+      }
+      .modal-close:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--text);
+      }
+      .modal-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 24px;
+      }
+
+      /* ── WITHDRAWAL DETAIL MODALS (crypto / bank) ── */
+      .withdrawal-modal {
+        min-width: 50vw;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .withdrawal-modal .withdrawal-btn {
+        display: flex;
+        justify-content: flex-end;
+        color: #0a1530;
+      }
+
+      /* form elements */
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+      }
+      .form-input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px 14px;
+        color: var(--text);
+        font-size: 14px;
+        font-family: inherit;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .form-input::placeholder {
+        color: var(--text-dim);
+      }
+      .form-input:focus {
+        border-color: var(--brand);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .amount-wrapper {
+        position: relative;
+      }
+      .amount-max {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--brand);
+        cursor: pointer;
+      }
+      .amount-hint {
+        font-size: 12px;
+        color: var(--text-dim);
+        margin-top: 6px;
+      }
+
+      /* network select */
+      .network-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .network-btn {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px;
+        background: var(--card);
+        cursor: pointer;
+        text-align: left;
+        transition: all 0.2s;
+      }
+      .network-btn:hover {
+        border-color: var(--brand-glow);
+      }
+      .network-btn.active {
+        border-color: var(--brand);
+        background: var(--brand-dim);
+      }
+      .network-btn-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .network-btn-sub {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+
+      /* checkbox */
+      .checkbox-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+      .checkbox-row input {
+        accent-color: var(--brand);
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+      .checkbox-row span {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+
+      /* important info box */
+      .info-box {
+        border: 1px solid rgba(30, 255, 199, 0.2);
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin-bottom: 24px;
+      }
+      .info-box-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .info-box ul {
+        padding-left: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .info-box li {
+        font-size: 13px;
+      }
+
+      /* submit btn */
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        border-radius: 10px;
+        border: none;
+        background: var(--brand);
+        color: #060d21;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+      .btn-submit:hover {
+        background: #00ead5;
+        box-shadow: 0 0 20px var(--brand-glow);
+      }
+
+      /* ── SUCCESS MODAL ── */
+      .success-modal {
+        width: 340px;
+        text-align: center;
+      }
+      .success-icon-wrap {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: rgba(30, 255, 199, 0.12);
+        border: 2px solid rgba(30, 255, 199, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 30px;
+        color: var(--brand);
+      }
+      .success-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
+      .success-sub {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .fa-trash-can {
+        color: #be343f;
+        cursor: pointer;
+      }
+
+      .fa-pen-to-square {
+        cursor: pointer;
+      }
+
+      /* ── DELETE MODAL ── */
+      .delete-modal {
+        width: 360px;
+        text-align: center;
+      }
+      .delete-icon-wrap {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        border: 2px solid var(--brand);
+        background: rgba(30, 255, 199, 0.07);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 28px;
+        color: var(--brand);
+      }
+      .delete-question {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 28px;
+        line-height: 1.5;
+      }
+      .delete-actions {
+        display: flex;
+        gap: 14px;
+      }
+      .btn-delete {
+        flex: 1;
+        padding: 13px;
+        border-radius: 10px;
+        background: transparent;
+        border: 1.5px solid var(--danger);
+        color: var(--danger);
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+      .btn-delete:hover {
+        background: rgba(255, 71, 87, 0.1);
+      }
+      .btn-cancel {
+        flex: 1;
+        padding: 13px;
+        border-radius: 10px;
+        background: var(--brand);
+        border: none;
+        color: #060d21;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+      .btn-cancel:hover {
+        background: #00ead5;
+      }
+
+      /* ── EDIT MODAL ── */
+      .edit-modal {
+        width: 400px;
+        max-width: 95vw;
+      }
+      .edit-actions {
+        display: flex;
+        width: 100%;
+        gap: 14px;
+        margin-top: 8px;
+      }
+      .edit-actions button {
+        width: 100%;
+      }
+      .btn-cancel-outline {
+        flex: 1;
+        padding: 13px;
+        border-radius: 10px;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+      .btn-cancel-outline:hover {
+        border-color: var(--text-muted);
+        color: var(--text);
+      }
+      .btn-save {
+        flex: 1;
+        padding: 13px;
+        border-radius: 10px;
+        border: none;
+        background: var(--brand);
+        color: #060d21;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+      .btn-save:hover {
+        background: #00ead5;
+      }
+
+      /* ── LOGOUT MODAL (kept from original) ── */
+      .logout-modal-box {
+        width: 360px;
+        text-align: center;
+      }
+      .logout-modal-box .lo-icon {
+        margin: 0 auto 16px;
+      }
+      .logout-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
+      .logout-description {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+      }
+      .logout-actions {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+      }
+
+      @media (max-width: 1024px) {
+        .saved-methods {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .sidebar {
+          display: none;
+        }
+        .content {
+          padding: 24px 16px;
+        }
+        .method-options {
+          grid-template-columns: 1fr;
+        }
+        .saved-methods {
+          grid-template-columns: 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .balance-amount {
+          font-size: 36px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -335,7 +779,34 @@
                 <a href="/withdraw.html" class="active">
                   <div class="menu-label">
                     <span class="menu-icon">
-                      <i class="fa-solid fa-hand-holding-dollar"></i>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M19.7453 13C20.5362 11.8662 21 10.4872 21 9C21 5.13401 17.866 2 14 2C10.134 2 7 5.134 7 9C7 10.0736 7.24169 11.0907 7.67363 12"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M14 6C12.8954 6 12 6.67157 12 7.5C12 8.32843 12.8954 9 14 9C15.1046 9 16 9.67157 16 10.5C16 11.3284 15.1046 12 14 12M14 6C14.8708 6 15.6116 6.4174 15.8862 7M14 6V5M14 12C13.1292 12 12.3884 11.5826 12.1138 11M14 12V13"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M3 14H5.39482C5.68897 14 5.97908 14.0663 6.24217 14.1936L8.28415 15.1816C8.54724 15.3089 8.83735 15.3751 9.1315 15.3751H10.1741C11.1825 15.3751 12 16.1662 12 17.142C12 17.1814 11.973 17.2161 11.9338 17.2269L9.39287 17.9295C8.93707 18.0555 8.449 18.0116 8.025 17.8064L5.84211 16.7503M12 16.5L16.5928 15.0889C17.407 14.8352 18.2871 15.136 18.7971 15.8423C19.1659 16.3529 19.0157 17.0842 18.4785 17.3942L10.9629 21.7305C10.4849 22.0063 9.92094 22.0736 9.39516 21.9176L3 20.0199"
+                          stroke="#B5BDC9"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </span>
                     <p>Withdraw</p>
                   </div>
@@ -548,7 +1019,7 @@
               <h3>Select Withdrawal Method</h3>
               <div class="method-options">
                 <label class="method-card">
-                  <div class="method-card-desc">
+                  <div class="method-card-left">
                     <div class="method-icon crypto-icon">
                       <i
                         class="fa-solid fa-sack-dollar"
@@ -559,26 +1030,54 @@
                     <div class="method-info">Cryptocurrency</div>
                     <div class="method-info">USDT (TRC-20 or BSC)</div>
                   </div>
-                  <input
-                    type="radio"
-                    name="withdrawalMethod"
-                    value="crypto"
-                    checked
-                  />
+                  <div class="method-card-right">
+                    <input
+                      type="radio"
+                      name="withdrawalMethod"
+                      value="crypto"
+                      checked
+                    />
+                    <div class="method-card-right-modal">
+                      <span
+                        class="details-link"
+                        onclick="
+                          event.stopPropagation();
+                          openModal('cryptoModal');
+                        "
+                      >
+                        Withdrawal Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </span>
+                    </div>
+                  </div>
                 </label>
                 <label class="method-card">
-                  <div class="method-card-desc">
+                  <div class="method-card-left">
                     <div class="method-icon bank-icon">🏦</div>
 
                     <div class="method-info">Bank Transfer</div>
                     <div class="method-info">SEPA transfer in EUR</div>
                   </div>
-                  <input
-                    type="radio"
-                    name="withdrawalMethod"
-                    value="crypto"
-                    checked
-                  />
+                  <div class="method-card-right">
+                    <input
+                      type="radio"
+                      name="withdrawalMethod"
+                      value="crypto"
+                      checked
+                    />
+                    <div class="method-card-right-modal">
+                      <span
+                        class="details-link"
+                        onclick="
+                          event.stopPropagation();
+                          openModal('bankModal');
+                        "
+                      >
+                        Withdrawal Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </span>
+                    </div>
+                  </div>
                 </label>
               </div>
             </div>
@@ -600,8 +1099,21 @@
                   <div class="card-value-section">
                     <div class="card-value">Business Account</div>
                     <div class="card-actions">
-                      <div><i class="fa-solid fa-pen-to-square"></i></div>
-                      <div><i class="fa-regular fa-trash-can"></i></div>
+                      <div
+                        onclick="
+                          openEditModal(
+                            'Chase Bank',
+                            'sarah.chen@email.com',
+                            'Business Account',
+                          )
+                        "
+                        title="Edit"
+                      >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </div>
+                      <div onclick="openDeleteModal()" title="Delete">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -619,8 +1131,21 @@
                   <div class="card-value-section">
                     <div class="card-value">Personal Account</div>
                     <div class="card-actions">
-                      <div><i class="fa-solid fa-pen-to-square"></i></div>
-                      <div><i class="fa-regular fa-trash-can"></i></div>
+                      <div
+                        onclick="
+                          openEditModal(
+                            'PayPal',
+                            'sarah.chen@email.com',
+                            'Personal Account',
+                          )
+                        "
+                        title="Edit"
+                      >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </div>
+                      <div onclick="openDeleteModal()" title="Delete">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -635,12 +1160,414 @@
       </main>
     </div>
 
+    <!-- ════════════════════════════════════════
+     MODAL: CRYPTO WITHDRAWAL
+════════════════════════════════════════ -->
+    <div class="modal-overlay" id="cryptoModal">
+      <div class="modal-box withdrawal-modal">
+        <button class="modal-close" onclick="closeModal('cryptoModal')">
+          ✕
+        </button>
+        <div class="modal-title">Withdrawal Details</div>
+
+        <div class="form-group">
+          <label>Withdrawal Amount</label>
+          <div class="amount-wrapper">
+            <input
+              class="form-input"
+              type="number"
+              id="cryptoAmount"
+              placeholder="0.00"
+              min="0"
+            />
+            <span class="amount-max" onclick="setMax('cryptoAmount')">Max</span>
+          </div>
+          <div class="amount-hint">Minimum 50 VP</div>
+        </div>
+
+        <label
+          style="
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 10px;
+          "
+          >Select Network</label
+        >
+        <div class="network-grid">
+          <button class="network-btn active" onclick="selectNetwork(this)">
+            <div class="network-btn-name">TRC-20</div>
+            <div class="network-btn-sub">TRON Network</div>
+          </button>
+          <button class="network-btn" onclick="selectNetwork(this)">
+            <div class="network-btn-name">BEP-20</div>
+            <div class="network-btn-sub">BSC Network</div>
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label>TRC-20 USDT Wallet Address</label>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Enter your TRC-20 USDT wallet Address"
+          />
+        </div>
+        <div class="form-group">
+          <label>Method Name</label>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Enter your TRC-20 USDT wallet Address"
+          />
+        </div>
+        <div class="form-group">
+          <label>Label (Optional)</label>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="e.g., Personal, Exchange"
+          />
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" checked /><span
+            >Set as default crypto method</span
+          >
+        </label>
+
+        <div class="info-box">
+          <div class="info-box-title">
+            <i class="fa-solid fa-triangle-exclamation"></i> Important
+            Information
+          </div>
+          <ul>
+            <li>Minimum withdrawal amount: 50 VP</li>
+            <li>Exchange rate: 1 VP = $0.90</li>
+            <li>Processing time: 1-3 business days</li>
+            <li>Please double-check all details before confirming</li>
+          </ul>
+        </div>
+
+        <div class="withdrawal-btn">
+          <button class="btn" onclick="submitWithdrawal()">
+            Submit Withdrawal Request
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+     MODAL: BANK WITHDRAWAL
+════════════════════════════════════════ -->
+    <div class="modal-overlay" id="bankModal">
+      <div class="modal-box withdrawal-modal">
+        <button class="modal-close" onclick="closeModal('bankModal')">✕</button>
+        <div class="modal-title">Withdrawal Details</div>
+
+        <div class="form-group">
+          <label>Withdrawal Amount</label>
+          <div class="amount-wrapper">
+            <input
+              class="form-input"
+              type="number"
+              id="bankAmount"
+              placeholder="0.00"
+              min="0"
+            />
+            <span class="amount-max" onclick="setMax('bankAmount')">Max</span>
+          </div>
+          <div class="amount-hint">Minimum 50 VP</div>
+        </div>
+
+        <div class="form-group" style="margin-top: 6px">
+          <p
+            style="
+              font-size: 14px;
+              font-weight: 600;
+              color: var(--text);
+              margin-bottom: 16px;
+            "
+          >
+            Bank Details
+          </p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>IBAN</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="DE*( 3908 0986 0098 7767 00"
+            />
+          </div>
+          <div class="form-group">
+            <label>BIC</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="DE*( 3908 0986 0098 7767 00"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input class="form-input" type="text" placeholder="John Smith" />
+          </div>
+          <div class="form-group">
+            <label>Bank Name</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Commerzbank AG"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Method Name</label>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="My Main Bank Account"
+          />
+        </div>
+        <div class="form-group">
+          <label>Bank Country (Optional)</label>
+          <input class="form-input" type="text" placeholder="e.g., Germany" />
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" checked /><span
+            >Set as default crypto method</span
+          >
+        </label>
+
+        <div class="info-box">
+          <div class="info-box-title">
+            <i class="fa-solid fa-triangle-exclamation"></i> Important
+            Information
+          </div>
+          <ul>
+            <li>Minimum withdrawal amount: 50 VP</li>
+            <li>Exchange rate: 1 VP = $0.90</li>
+            <li>Processing time: 1-3 business days</li>
+            <li>Please double-check all details before confirming</li>
+          </ul>
+        </div>
+
+        <div class="withdrawal-btn">
+          <button class="btn" onclick="submitWithdrawal()">
+            Submit Withdrawal Request
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+     MODAL: SUCCESS
+════════════════════════════════════════ -->
+    <div class="modal-overlay" id="successModal">
+      <div class="modal-box success-modal">
+        <div class="success-icon-wrap">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="success-title">Withdrawal Successful!</div>
+        <div class="success-sub" style="margin-bottom: 28px">
+          Your request has been submitted and is being processed.
+        </div>
+        <button class="btn-submit" onclick="closeModal('successModal')">
+          Done
+        </button>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+     MODAL: DELETE CONFIRMATION
+════════════════════════════════════════ -->
+    <div class="modal-overlay" id="deleteModal">
+      <div class="modal-box delete-modal">
+        <div class="delete-icon-wrap">
+          <i class="fa-solid fa-question" style="font-size: 26px"></i>
+        </div>
+        <div class="delete-question">
+          Are you sure you want to<br />delete this card?
+        </div>
+        <div class="delete-actions">
+          <button class="btn-delete" onclick="closeModal('deleteModal')">
+            Delete
+          </button>
+          <button class="btn-cancel" onclick="closeModal('deleteModal')">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+     MODAL: EDIT CARD
+════════════════════════════════════════ -->
+    <div class="modal-overlay" id="editModal">
+      <div class="modal-box edit-modal">
+        <button class="modal-close" onclick="closeModal('editModal')">✕</button>
+        <div class="modal-title">Edit Card Details</div>
+        <div class="form-group">
+          <label>Bank name</label>
+          <input
+            class="form-input"
+            type="text"
+            id="editBankName"
+            placeholder="Chase Bank"
+          />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            class="form-input"
+            type="email"
+            id="editEmail"
+            placeholder="sarah.chen@email.com"
+          />
+        </div>
+        <div class="form-group">
+          <label>Account Type</label>
+          <input
+            class="form-input"
+            type="text"
+            id="editAccountType"
+            placeholder="Personal Account"
+          />
+        </div>
+        <div class="edit-actions">
+          <button class="btn-outline" onclick="closeModal('editModal')">
+            Cancel
+          </button>
+          <button class="btn" onclick="saveEdit()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+     MODAL: LOGOUT
+════════════════════════════════════════ -->
+    <div class="modal-overlay" id="logoutModal">
+      <div class="modal-box logout-modal-box">
+        <svg
+          class="lo-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="72"
+          height="72"
+          viewBox="0 0 89 89"
+          fill="none"
+        >
+          <path
+            d="M43.262 53.737C43.254 53.737 43.245 53.737 43.237 53.737C41.712 53.723 40.486 52.476 40.499 50.949L40.512 49.568C40.512 49.489 40.516 49.409 40.524 49.331C40.907 45.313 43.574 42.85 45.719 40.87C46.446 40.199 47.134 39.565 47.719 38.904C48.433 38.098 49.469 36.449 48.379 34.459C47.124 32.16 44.057 31.51 41.675 32.055C39.186 32.624 38.269 34.75 37.943 35.966C37.548 37.439 36.032 38.314 34.559 37.92C33.085 37.525 32.21 36.01 32.604 34.536C33.705 30.424 36.561 27.558 40.44 26.67C45.66 25.478 50.917 27.587 53.225 31.807C55.146 35.321 54.62 39.444 51.851 42.568C51.081 43.435 50.259 44.195 49.464 44.929C47.482 46.759 46.243 47.983 46.033 49.749L46.022 50.996C46.011 52.517 44.776 53.737 43.262 53.737Z"
+            fill="#1EFFC7"
+          />
+          <path
+            d="M43.261 62.017C42.543 62.017 41.825 61.727 41.314 61.216C40.789 60.705 40.499 59.987 40.499 59.255C40.499 58.537 40.789 57.818 41.314 57.307C42.336 56.285 44.187 56.285 45.209 57.307C45.734 57.818 46.024 58.537 46.024 59.255C46.024 59.987 45.734 60.691 45.223 61.216C44.698 61.727 43.993 62.017 43.261 62.017Z"
+            fill="#1EFFC7"
+          />
+          <path
+            d="M44.094 80.108C40.952 80.108 37.837 79.699 34.835 78.891C21.901 75.412 11.774 64.698 9.035 51.594C6.244 38.244 11.396 24.21 22.162 15.841C28.386 11.003 36.236 8.337 44.267 8.337C49.826 8.337 55.347 9.63 60.234 12.073C72.302 18.111 80.099 30.725 80.099 44.21C80.099 55.213 74.907 65.818 66.211 72.578C59.965 77.434 52.109 80.108 44.094 80.108ZM44.268 13.862C37.46 13.862 30.813 16.114 25.555 20.204C16.443 27.287 12.081 39.164 14.444 50.463C16.762 61.547 25.33 70.612 36.272 73.556C38.805 74.237 41.438 74.583 44.094 74.583H44.095C50.888 74.583 57.538 72.322 62.821 68.216C70.182 62.495 74.575 53.521 74.575 44.21C74.575 32.799 67.977 22.125 57.764 17.016C53.64 14.953 48.974 13.862 44.268 13.862Z"
+            fill="#1EFFC7"
+          />
+        </svg>
+        <div class="logout-title">Are You Sure?</div>
+        <div class="logout-description">Do you want to log out?</div>
+        <div class="logout-actions">
+          <button
+            class="btn"
+            onclick="
+              closeModal('logoutModal');
+              alert('Logged out!');
+            "
+          >
+            Logout
+          </button>
+          <button class="btn-outline" onclick="closeModal('logoutModal')">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
     <script>
       lucide.createIcons();
     </script>
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="withdrawal.js"></script>
+    <script>
+      // ── Modal helpers ──
+      function openModal(id) {
+        document.getElementById(id).classList.add("open");
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove("open");
+      }
+
+      // Close on overlay click
+      document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) overlay.classList.remove("open");
+        });
+      });
+
+      // Close user dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        const dd = document.getElementById("userDropdown");
+        if (!e.target.closest(".user-menu")) dd.classList.remove("open");
+      });
+
+      // ── Method selection ──
+      function selectMethod(type, card) {
+        document
+          .querySelectorAll(".method-card")
+          .forEach((c) => c.classList.remove("selected"));
+        card.classList.add("selected");
+        const radio = card.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+      }
+
+      // ── Network selection (crypto modal) ──
+      function selectNetwork(btn) {
+        document
+          .querySelectorAll(".network-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+      }
+
+      // ── Max amount ──
+      function setMax(inputId) {
+        document.getElementById(inputId).value = "24580.50";
+      }
+
+      // ── Submit withdrawal → show success ──
+      function submitWithdrawal() {
+        document
+          .querySelectorAll(".modal-overlay")
+          .forEach((m) => m.classList.remove("open"));
+        setTimeout(() => openModal("successModal"), 150);
+      }
+
+      // ── Edit modal ──
+      function openEditModal(bankName, email, accountType) {
+        document.getElementById("editBankName").value = bankName;
+        document.getElementById("editEmail").value = email;
+        document.getElementById("editAccountType").value = accountType;
+        openModal("editModal");
+      }
+      function saveEdit() {
+        closeModal("editModal");
+      }
+
+      // ── Delete modal ──
+      function openDeleteModal() {
+        openModal("deleteModal");
+      }
+    </script>
   </body>
 </html>
