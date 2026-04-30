@@ -19,7 +19,8 @@
 .balance-card {
   background:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    /* overlay */ url("../images/withdraw_bg.webp");
+    /* overlay */
+    url("../images/withdraw_bg.webp");
   /* image */
 
   background-size: cover;
@@ -144,9 +145,33 @@
   transition: all 0.3s ease;
 }
 
-.method-card-desc div {
-  margin: 8px 0;
+.method-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
+
+.method-card-left div {
+  margin-top: 8px;
+}
+
+.method-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.method-card-right-modal:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  /* space between text & underline */
+  text-decoration-thickness: 1.5px;
+  /* optional: cleaner look */
+}
+
 
 .radio-ui {
   margin-left: auto;
@@ -382,3 +407,4 @@
     font-size: 16px;
   }
 }
+
